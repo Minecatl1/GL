@@ -33,7 +33,7 @@ def list_web_games(directory):
 def list_nes_games(directory):
     nes_games = []
     for nes_game_file in os.listdir(directory):
-        if nes_game_file.endswith(".nes"):
+        if nes_game_file.endswith(".NES"):
             nes_games.append({
                 "name": os.path.splitext(nes_game_file)[0],
                 "type": "nes",

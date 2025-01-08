@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Placeholder",
+        "type": "py",
+        "path": "Games/Placeholder/Placeholder.py",
+        "icon": "Games/Placeholder/Icon.png"
+    },
+    {
+        "name": "Shell Shockers",
+        "type": "web",
+        "url": "Https://shellshockers.wiki"
+    },
+    {
+        "name": "FinalFantasy3",
+        "type": "nes",
+        "path": "Games/NESGames/FinalFantasy3.NES"
+    },
+    {
+        "name": "Placeholder",
+        "type": "nes",
+        "path": "Games/NESGames/Placeholder.NES"
+    }
+]
