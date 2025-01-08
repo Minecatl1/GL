@@ -1,5 +1,11 @@
 [
     {
+        "name": "Minecraft",
+        "type": "html",
+        "path": "Games/Minecraft/EaglercraftX.html",
+        "icon": "Games/Minecraft/Icon.png"
+    },
+    {
         "name": "Placeholder",
         "type": "py",
         "path": "Games/Placeholder/Placeholder.py",
@@ -11,9 +17,34 @@
         "url": "Https://shellshockers.wiki"
     },
     {
+        "name": "SMB2",
+        "type": "nes",
+        "path": "Games/NESGames/SMB2.NES"
+    },
+    {
+        "name": "SMB3",
+        "type": "nes",
+        "path": "Games/NESGames/SMB3.NES"
+    },
+    {
         "name": "KirbysAdventure",
         "type": "nes",
         "path": "Games/NESGames/KirbysAdventure.NES"
+    },
+    {
+        "name": "STARWARS",
+        "type": "nes",
+        "path": "Games/NESGames/STARWARS.NES"
+    },
+    {
+        "name": "SMB",
+        "type": "nes",
+        "path": "Games/NESGames/SMB.NES"
+    },
+    {
+        "name": "ZELDA2",
+        "type": "nes",
+        "path": "Games/NESGames/ZELDA2.NES"
     },
     {
         "name": "Placeholder",
@@ -24,5 +55,10 @@
         "name": "FinalFantasy3",
         "type": "nes",
         "path": "Games/NESGames/FinalFantasy3.NES"
+    },
+    {
+        "name": "ZELDA",
+        "type": "nes",
+        "path": "Games/NESGames/ZELDA.NES"
     }
 ]
