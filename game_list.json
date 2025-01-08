@@ -11,13 +11,18 @@
         "url": "Https://shellshockers.wiki"
     },
     {
-        "name": "FinalFantasy3",
+        "name": "KirbysAdventure",
         "type": "nes",
-        "path": "Games/NESGames/FinalFantasy3.NES"
+        "path": "Games/NESGames/KirbysAdventure.NES"
     },
     {
         "name": "Placeholder",
         "type": "nes",
         "path": "Games/NESGames/Placeholder.NES"
+    },
+    {
+        "name": "FinalFantasy3",
+        "type": "nes",
+        "path": "Games/NESGames/FinalFantasy3.NES"
     }
 ]
