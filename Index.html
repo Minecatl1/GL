@@ -15,6 +15,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-direction: column;
         }
         .container {
             background-color: #3c4043;
@@ -23,6 +24,7 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
             width: 350px;
             text-align: center;
+            margin-bottom: 20px;
         }
         h2 {
             margin: 0 0 20px;
@@ -52,6 +54,18 @@
             border-radius: 5px;
             border: 1px solid #3c4043;
         }
+        #gameIframeContainer {
+            width: 80%;
+            height: 60vh;
+            margin-top: 20px;
+        }
+        #gameIframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+            background-color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -61,11 +75,15 @@
             <!-- Games will be dynamically added here -->
         </ul>
     </div>
+    <div id="gameIframeContainer">
+        <iframe id="gameIframe"></iframe>
+    </div>
     <script>
         fetch('game_list.json')
             .then(response => response.json())
             .then(games => {
                 const gameList = document.getElementById('gameList');
+                const gameIframe = document.getElementById('gameIframe');
                 games.forEach(game => {
                     const listItem = document.createElement('li');
                     listItem.className = 'game-item';
@@ -85,11 +103,31 @@
                         if (game.type === 'python') {
                             // Load Python game logic (this would typically involve server-side execution)
                         } else if (game.type === 'html') {
-                            window.open(`fullscreen.html?gameUrl=${game.path}`, '_blank');
+                            gameIframe.src = game.path;
                         } else if (game.type === 'web') {
-                            window.open(`fullscreen.html?gameUrl=${game.url}`, '_blank');
+                            gameIframe.src = game.url;
                         } else if (game.type === 'nes') {
-                            // Load NES game logic (requires integration with an emulator)
+                            fetch('/launch_nes', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ path: game.path })
+                            })
+                            .then(response => response.text())
+                            .then(data => console.log(data))
+                            .catch(error => console.error('Error launching NES game:', error));
+                        } else if (game.type === 'xci') {
+                            fetch('/launch_xci', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ path: game.path })
+                            })
+                            .then(response => response.text())
+                            .then(data => console.log(data))
+                            .catch(error => console.error('Error launching XCI game:', error));
                         }
                     });
 
