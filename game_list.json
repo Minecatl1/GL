@@ -1,9 +1,63 @@
 [
     {
+        "name": "Fnaf 3",
+        "type": "html",
+        "path": "Games/Fnaf 3/index.html",
+        "icon": "Games/Fnaf 3/Icon.png"
+    },
+    {
+        "name": "Sister Location",
+        "type": "html",
+        "path": "Games/Sister Location/index.html",
+        "icon": "Games/Sister Location/Icon.png"
+    },
+    {
+        "name": "Fnaf 2",
+        "type": "html",
+        "path": "Games/Fnaf 2/index.html",
+        "icon": "Games/Fnaf 2/Icon.png"
+    },
+    {
         "name": "Minecraft",
         "type": "html",
         "path": "Games/Minecraft/EaglercraftX.html",
         "icon": "Games/Minecraft/Icon.png"
+    },
+    {
+        "name": "Fnaf World",
+        "type": "html",
+        "path": "Games/Fnaf World/index.html",
+        "icon": "Games/Fnaf World/Icon.png"
+    },
+    {
+        "name": "Baldis Basics",
+        "type": "html",
+        "path": "Games/Baldis Basics/index.html",
+        "icon": "Games/Baldis Basics/Icon.png"
+    },
+    {
+        "name": "Fnaf 4",
+        "type": "html",
+        "path": "Games/Fnaf 4/index.html",
+        "icon": "Games/Fnaf 4/Icon.png"
+    },
+    {
+        "name": "Ultimate Custom Night",
+        "type": "html",
+        "path": "Games/Ultimate Custom Night/index.html",
+        "icon": "Games/Ultimate Custom Night/Icon.png"
+    },
+    {
+        "name": "Pizza Simulator",
+        "type": "html",
+        "path": "Games/Pizza Simulator/index.html",
+        "icon": "Games/Pizza Simulator/Icon.png"
+    },
+    {
+        "name": "Fnaf 1",
+        "type": "html",
+        "path": "Games/Fnaf 1/index.html",
+        "icon": "Games/Fnaf 1/Icon.png"
     },
     {
         "name": "Placeholder",
