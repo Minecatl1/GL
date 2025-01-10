@@ -1,5 +1,11 @@
 [
     {
+        "name": "Drive Mad",
+        "type": "html",
+        "path": "Games/Drive Mad/index.html",
+        "icon": "Games/Drive Mad/Icon.png"
+    },
+    {
         "name": "Fnaf 3",
         "type": "html",
         "path": "Games/Fnaf 3/index.html",
@@ -60,51 +66,51 @@
         "icon": "Games/Fnaf 1/Icon.png"
     },
     {
-        "name": "Final Fantasy 3"
-        "type": "NES"
-        "path": "Games/roms/FinalFantasy3.NES"
+        "name": "Final Fantasy 3",
+        "type": "NES",
+        "path": "Games/roms/FinalFantasy3.NES",
         "icon": null
     },
     {
-        "name": "Kirbys Adventure"
-        "type": "NES"
-        "path": "Games/roms/KirbysAdventure.NES"
+        "name": "Kirbys Adventure",
+        "type": "NES",
+        "path": "Games/roms/KirbysAdventure.NES",
         "icon": null
     },
     {
-        "name": "Super Mario Bros"
-        "type": "NES"
-        "path": "Games/roms/SMB.NES"
+        "name": "Super Mario Bros",
+        "type": "NES",
+        "path": "Games/roms/SMB.NES",
         "icon": null
     },
     {
-        "name": "Super Mario Bros 2"
-        "type": "NES"
-        "path": "Games/roms/SMB2.NES"
+        "name": "Super Mario Bros 2",
+        "type": "NES",
+        "path": "Games/roms/SMB2.NES",
         "icon": null
     },
     {
-        "name": "Super Mario Bros 3"
-        "type": "NES"
-        "path": "Games/roms/SMB3.NES"
+        "name": "Super Mario Bros 3",
+        "type": "NES",
+        "path": "Games/roms/SMB3.NES",
         "icon": null
     },
     {
-        "name": "Starwars Battlefront"
-        "type": "NES"
-        "path": "Games/roms/STARWARS.NES"
+        "name": "Starwars Battlefront",
+        "type": "NES",
+        "path": "Games/roms/STARWARS.NES",
         "icon": null
     },
     {
-        "name": "The Legend of Zelda"
-        "type": "NES"
-        "path": "Games/roms/ZELDA.NES"
+        "name": "The Legend of Zelda",
+        "type": "NES",
+        "path": "Games/roms/ZELDA.NES",
         "icon": null
     },
     {
-        "name": "The Legend of Zelda 2"
-        "type": "NES"
-        "path": "Games/roms/ZELDA2.NES"
+        "name": "The Legend of Zelda 2",
+        "type": "NES",
+        "path": "Games/roms/ZELDA2.NES",
         "icon": null
-    },
+    }
 ]
