@@ -87,24 +87,6 @@ def main():
 
     all_games = games + web_games + rom_games
 
-    while True:
-        choice = input("Do you want to scan external storage for games? (y/n): ").strip().lower()
-        if choice == 'y':
-            found_games = scan_external_storage(["py", "html", "js", "nes", "xci", "wbfs", "rvz"])  # Include Wii games
-            if found_games:
-                for game in found_games:
-                    print(f"Found game: {game['path']}")
-                    add_choice = input("Do you want to add this game to the list? (y/n): ").strip().lower()
-                    if add_choice == 'y':
-                        game_name = input("Enter the name of the game: ").strip()
-                        icon_path = input("Enter the path to the icon: ").strip()
-                        game["name"] = game_name
-                        game["icon"] = icon_path
-                        all_games.append(game)
-            else:
-                print("No games found on external storage.")
-        else:
-            break
 
     save_games_to_json(all_games)
 

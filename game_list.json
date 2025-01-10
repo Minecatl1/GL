@@ -30,10 +30,22 @@
         "icon": "Games/Fnaf World/Icon.png"
     },
     {
-        "name": "Baldis Basics",
+        "name": "Baldis-Basics",
+        "type": "js",
+        "path": "Games/Baldis-Basics/baldi.js",
+        "icon": "Games/Baldis-Basics/Icon.png"
+    },
+    {
+        "name": "Baldis-Basics",
         "type": "html",
-        "path": "Games/Baldis Basics/index.html",
-        "icon": "Games/Baldis Basics/Icon.png"
+        "path": "Games/Baldis-Basics/index.html",
+        "icon": "Games/Baldis-Basics/Icon.png"
+    },
+    {
+        "name": "Baldis-Basics",
+        "type": "js",
+        "path": "Games/Baldis-Basics/firebase-app.js",
+        "icon": "Games/Baldis-Basics/Icon.png"
     },
     {
         "name": "Fnaf 4",
@@ -69,50 +81,5 @@
         "name": "Shell Shockers",
         "type": "web",
         "url": "Https://shellshockers.wiki"
-    },
-    {
-        "name": "SMB2",
-        "type": "nes",
-        "path": "Games/NESGames/SMB2.NES"
-    },
-    {
-        "name": "SMB3",
-        "type": "nes",
-        "path": "Games/NESGames/SMB3.NES"
-    },
-    {
-        "name": "KirbysAdventure",
-        "type": "nes",
-        "path": "Games/NESGames/KirbysAdventure.NES"
-    },
-    {
-        "name": "STARWARS",
-        "type": "nes",
-        "path": "Games/NESGames/STARWARS.NES"
-    },
-    {
-        "name": "SMB",
-        "type": "nes",
-        "path": "Games/NESGames/SMB.NES"
-    },
-    {
-        "name": "ZELDA2",
-        "type": "nes",
-        "path": "Games/NESGames/ZELDA2.NES"
-    },
-    {
-        "name": "Placeholder",
-        "type": "nes",
-        "path": "Games/NESGames/Placeholder.NES"
-    },
-    {
-        "name": "FinalFantasy3",
-        "type": "nes",
-        "path": "Games/NESGames/FinalFantasy3.NES"
-    },
-    {
-        "name": "ZELDA",
-        "type": "nes",
-        "path": "Games/NESGames/ZELDA.NES"
     }
 ]
