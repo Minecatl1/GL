@@ -33,7 +33,7 @@ def list_rom_games(directory):
 
 def list_web_games(directory):
     web_games = []
-    web_games_dir = os.path.join(directory, "roms", "WebGames")
+    web_games_dir = os.path.join(directory, "WebGames")
     for web_game_file in os.listdir(web_games_dir):
         if web_game_file.endswith(".txt"):
             with open(os.path.join(web_games_dir, web_game_file), "r") as file:
