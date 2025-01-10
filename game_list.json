@@ -1,11 +1,5 @@
 [
     {
-        "name": "Drive Mad",
-        "type": "html",
-        "path": "Games/Drive Mad/index.html",
-        "icon": "Games/Drive Mad/Icon.png"
-    },
-    {
         "name": "Fnaf 3",
         "type": "html",
         "path": "Games/Fnaf 3/index.html",
