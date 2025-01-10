@@ -30,22 +30,10 @@
         "icon": "Games/Fnaf World/Icon.png"
     },
     {
-        "name": "Baldis-Basics",
-        "type": "js",
-        "path": "Games/Baldis-Basics/baldi.js",
-        "icon": "Games/Baldis-Basics/Icon.png"
-    },
-    {
-        "name": "Baldis-Basics",
+        "name": "Baldis Basics",
         "type": "html",
         "path": "Games/Baldis-Basics/index.html",
-        "icon": "Games/Baldis-Basics/Icon.png"
-    },
-    {
-        "name": "Baldis-Basics",
-        "type": "js",
-        "path": "Games/Baldis-Basics/firebase-app.js",
-        "icon": "Games/Baldis-Basics/Icon.png"
+        "icon": null
     },
     {
         "name": "Fnaf 4",
@@ -72,14 +60,51 @@
         "icon": "Games/Fnaf 1/Icon.png"
     },
     {
-        "name": "Placeholder",
-        "type": "py",
-        "path": "Games/Placeholder/Placeholder.py",
-        "icon": "Games/Placeholder/Icon.png"
+        "name": "Final Fantasy 3"
+        "type": "NES"
+        "path": "Games/roms/FinalFantasy3.NES"
+        "icon": null
     },
     {
-        "name": "Shell Shockers",
-        "type": "web",
-        "url": "Https://shellshockers.wiki"
-    }
+        "name": "Kirbys Adventure"
+        "type": "NES"
+        "path": "Games/roms/KirbysAdventure.NES"
+        "icon": null
+    },
+    {
+        "name": "Super Mario Bros"
+        "type": "NES"
+        "path": "Games/roms/SMB.NES"
+        "icon": null
+    },
+    {
+        "name": "Super Mario Bros 2"
+        "type": "NES"
+        "path": "Games/roms/SMB2.NES"
+        "icon": null
+    },
+    {
+        "name": "Super Mario Bros 3"
+        "type": "NES"
+        "path": "Games/roms/SMB3.NES"
+        "icon": null
+    },
+    {
+        "name": "Starwars Battlefront"
+        "type": "NES"
+        "path": "Games/roms/STARWARS.NES"
+        "icon": null
+    },
+    {
+        "name": "The Legend of Zelda"
+        "type": "NES"
+        "path": "Games/roms/ZELDA.NES"
+        "icon": null
+    },
+    {
+        "name": "The Legend of Zelda 2"
+        "type": "NES"
+        "path": "Games/roms/ZELDA2.NES"
+        "icon": null
+    },
 ]
