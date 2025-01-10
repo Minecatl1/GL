@@ -1,57 +1,9 @@
 [
     {
-        "name": "Fnaf 3",
-        "type": "html",
-        "path": "Games/Fnaf 3/index.html",
-        "icon": "Games/Fnaf 3/Icon.png"
-    },
-    {
-        "name": "Sister Location",
-        "type": "html",
-        "path": "Games/Sister Location/index.html",
-        "icon": "Games/Sister Location/Icon.png"
-    },
-    {
-        "name": "Fnaf 2",
-        "type": "html",
-        "path": "Games/Fnaf 2/index.html",
-        "icon": "Games/Fnaf 2/Icon.png"
-    },
-    {
-        "name": "Minecraft",
-        "type": "html",
-        "path": "Games/Minecraft/EaglercraftX.html",
-        "icon": "Games/Minecraft/Icon.png"
-    },
-    {
-        "name": "Fnaf World",
-        "type": "html",
-        "path": "Games/Fnaf World/index.html",
-        "icon": "Games/Fnaf World/Icon.png"
-    },
-    {
-        "name": "Baldis Basics",
-        "type": "html",
-        "path": "Games/Baldis-Basics/index.html",
-        "icon": null
-    },
-    {
-        "name": "Fnaf 4",
-        "type": "html",
-        "path": "Games/Fnaf 4/index.html",
-        "icon": "Games/Fnaf 4/Icon.png"
-    },
-    {
         "name": "Ultimate Custom Night",
         "type": "html",
         "path": "Games/Ultimate Custom Night/index.html",
         "icon": "Games/Ultimate Custom Night/Icon.png"
-    },
-    {
-        "name": "Pizza Simulator",
-        "type": "html",
-        "path": "Games/Pizza Simulator/index.html",
-        "icon": "Games/Pizza Simulator/Icon.png"
     },
     {
         "name": "Fnaf 1",
@@ -60,51 +12,56 @@
         "icon": "Games/Fnaf 1/Icon.png"
     },
     {
-        "name": "Final Fantasy 3",
-        "type": "NES",
-        "path": "Games/roms/FinalFantasy3.NES",
-        "icon": null
+        "name": "Fnaf 4",
+        "type": "html",
+        "path": "Games/Fnaf 4/index.html",
+        "icon": "Games/Fnaf 4/Icon.png"
     },
     {
-        "name": "Kirbys Adventure",
-        "type": "NES",
-        "path": "Games/roms/KirbysAdventure.NES",
-        "icon": null
+        "name": "Baldis-Basics",
+        "type": "html",
+        "path": "Games/Baldis-Basics/index.html",
+        "icon": "Games/Baldis-Basics/Icon.png"
     },
     {
-        "name": "Super Mario Bros",
-        "type": "NES",
-        "path": "Games/roms/SMB.NES",
-        "icon": null
+        "name": "Fnaf 2",
+        "type": "html",
+        "path": "Games/Fnaf 2/index.html",
+        "icon": "Games/Fnaf 2/Icon.png"
     },
     {
-        "name": "Super Mario Bros 2",
-        "type": "NES",
-        "path": "Games/roms/SMB2.NES",
-        "icon": null
+        "name": "Sister Location",
+        "type": "html",
+        "path": "Games/Sister Location/index.html",
+        "icon": "Games/Sister Location/Icon.png"
     },
     {
-        "name": "Super Mario Bros 3",
-        "type": "NES",
-        "path": "Games/roms/SMB3.NES",
-        "icon": null
+        "name": "Pizza Simulator",
+        "type": "html",
+        "path": "Games/Pizza Simulator/index.html",
+        "icon": "Games/Pizza Simulator/Icon.png"
     },
     {
-        "name": "Starwars Battlefront",
-        "type": "NES",
-        "path": "Games/roms/STARWARS.NES",
-        "icon": null
+        "name": "Fnaf World",
+        "type": "html",
+        "path": "Games/Fnaf World/index.html",
+        "icon": "Games/Fnaf World/Icon.png"
     },
     {
-        "name": "The Legend of Zelda",
-        "type": "NES",
-        "path": "Games/roms/ZELDA.NES",
-        "icon": null
+        "name": "Fnaf 3",
+        "type": "html",
+        "path": "Games/Fnaf 3/index.html",
+        "icon": "Games/Fnaf 3/Icon.png"
     },
     {
-        "name": "The Legend of Zelda 2",
-        "type": "NES",
-        "path": "Games/roms/ZELDA2.NES",
-        "icon": null
+        "name": "Minecraft",
+        "type": "html",
+        "path": "Games/Minecraft/EaglercraftX.html",
+        "icon": "Games/Minecraft/Icon.png"
+    },
+    {
+        "name": "Shell Shockers",
+        "type": "web",
+        "url": "Https://shellshockers.wiki"
     }
 ]
