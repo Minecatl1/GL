@@ -68,7 +68,7 @@ def main():
                     os.rename(file_path, os.path.join(roms_dir, file))
             os.rmdir(folder_path)
 
-    games = list_games(games_dir, ["py", "html", "js"])  # Include JS files
+    games = list_games(games_dir, ["py", "html"])  # Include JS files
     rom_games = list_rom_games(games_dir)
     web_games = list_web_games(games_dir)
 

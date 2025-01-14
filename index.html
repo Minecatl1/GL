@@ -123,7 +123,7 @@
                     listItem.addEventListener('click', () => {
                         if (game.type === 'python') {
                             // Load Python game logic (this would typically involve server-side execution)
-                        } else if (game.type === 'html' || game.type === 'js') {
+                        } else if (game.type === 'html') {
                             gameIframe.src = game.path;
                         } else if (game.type === 'web') {
                             gameIframe.src = game.url;
