@@ -1,9 +1,45 @@
 [
     {
+        "name": "basketbros-io",
+        "type": "html",
+        "path": "Games/basketbros-io/index.html",
+        "icon": "Games/basketbros-io/Icon.png"
+    },
+    {
+        "name": "Moto-X3M",
+        "type": "html",
+        "path": "Games/Moto-X3M/index.html",
+        "icon": "Games/Moto-X3M/Icon.png"
+    },
+    {
+        "name": "DogeMiner",
+        "type": "html",
+        "path": "Games/DogeMiner/index.html",
+        "icon": "Games/DogeMiner/Icon.png"
+    },
+    {
+        "name": "bitlife",
+        "type": "html",
+        "path": "Games/bitlife/index.html",
+        "icon": "Games/bitlife/Icon.png"
+    },
+    {
         "name": "Ultimate Custom Night",
         "type": "html",
         "path": "Games/Ultimate Custom Night/index.html",
         "icon": "Games/Ultimate Custom Night/Icon.png"
+    },
+    {
+        "name": "fruitninja",
+        "type": "html",
+        "path": "Games/fruitninja/index.html",
+        "icon": "Games/fruitninja/Icon.png"
+    },
+    {
+        "name": "basketball-stars",
+        "type": "html",
+        "path": "Games/basketball-stars/index.html",
+        "icon": "Games/basketball-stars/Icon.png"
     },
     {
         "name": "Fnaf 1",
@@ -12,10 +48,88 @@
         "icon": "Games/Fnaf 1/Icon.png"
     },
     {
+        "name": "bitlife-life-simulator",
+        "type": "html",
+        "path": "Games/bitlife-life-simulator/play.html",
+        "icon": "Games/bitlife-life-simulator/Icon.png"
+    },
+    {
+        "name": "crossyroad",
+        "type": "html",
+        "path": "Games/crossyroad/index.html",
+        "icon": "Games/crossyroad/Icon.png"
+    },
+    {
+        "name": "ducklife2",
+        "type": "html",
+        "path": "Games/ducklife2/index.html",
+        "icon": "Games/ducklife2/Icon.png"
+    },
+    {
+        "name": "Rocket-League",
+        "type": "py",
+        "path": "Games/Rocket-League/dehar.py",
+        "icon": "Games/Rocket-League/Icon.png"
+    },
+    {
+        "name": "Rocket-League",
+        "type": "html",
+        "path": "Games/Rocket-League/index.html",
+        "icon": "Games/Rocket-League/Icon.png"
+    },
+    {
+        "name": "dumbwaystodie",
+        "type": "html",
+        "path": "Games/dumbwaystodie/dumbwaystodie.html",
+        "icon": "Games/dumbwaystodie/Icon.png"
+    },
+    {
         "name": "Fnaf 4",
         "type": "html",
         "path": "Games/Fnaf 4/index.html",
         "icon": "Games/Fnaf 4/Icon.png"
+    },
+    {
+        "name": "cars-simulator",
+        "type": "html",
+        "path": "Games/cars-simulator/index.html",
+        "icon": "Games/cars-simulator/Icon.png"
+    },
+    {
+        "name": "2048",
+        "type": "html",
+        "path": "Games/2048/index.html",
+        "icon": "Games/2048/Icon.png"
+    },
+    {
+        "name": "ducklife1",
+        "type": "html",
+        "path": "Games/ducklife1/index.html",
+        "icon": "Games/ducklife1/Icon.png"
+    },
+    {
+        "name": "cookie-clicker",
+        "type": "html",
+        "path": "Games/cookie-clicker/delete.html",
+        "icon": "Games/cookie-clicker/Icon.png"
+    },
+    {
+        "name": "cookie-clicker",
+        "type": "html",
+        "path": "Games/cookie-clicker/index.html",
+        "icon": "Games/cookie-clicker/Icon.png"
+    },
+    {
+        "name": "bloonstd",
+        "type": "html",
+        "path": "Games/bloonstd/index.html",
+        "icon": "Games/bloonstd/Icon.png"
+    },
+    {
+        "name": "fnf",
+        "type": "html",
+        "path": "Games/fnf/index.html",
+        "icon": "Games/fnf/Icon.png"
     },
     {
         "name": "Baldis-Basics",
@@ -24,10 +138,58 @@
         "icon": "Games/Baldis-Basics/Icon.png"
     },
     {
+        "name": "fireboy-and-watergirl-2",
+        "type": "html",
+        "path": "Games/fireboy-and-watergirl-2/index.html",
+        "icon": "Games/fireboy-and-watergirl-2/Icon.png"
+    },
+    {
+        "name": "angrybirds",
+        "type": "html",
+        "path": "Games/angrybirds/index.html",
+        "icon": "Games/angrybirds/Icon.png"
+    },
+    {
+        "name": "doodle-jump",
+        "type": "html",
+        "path": "Games/doodle-jump/index.html",
+        "icon": "Games/doodle-jump/Icon.png"
+    },
+    {
+        "name": "drift-hunters",
+        "type": "html",
+        "path": "Games/drift-hunters/index.html",
+        "icon": "Games/drift-hunters/Icon.png"
+    },
+    {
+        "name": "funny-shooter2",
+        "type": "html",
+        "path": "Games/funny-shooter2/index.html",
+        "icon": "Games/funny-shooter2/Icon.png"
+    },
+    {
         "name": "Fnaf 2",
         "type": "html",
         "path": "Games/Fnaf 2/index.html",
         "icon": "Games/Fnaf 2/Icon.png"
+    },
+    {
+        "name": "ducklife3",
+        "type": "html",
+        "path": "Games/ducklife3/index.html",
+        "icon": "Games/ducklife3/Icon.png"
+    },
+    {
+        "name": "drive-mad",
+        "type": "html",
+        "path": "Games/drive-mad/index.html",
+        "icon": "Games/drive-mad/Icon.png"
+    },
+    {
+        "name": "cell-machine",
+        "type": "html",
+        "path": "Games/cell-machine/index.html",
+        "icon": "Games/cell-machine/Icon.png"
     },
     {
         "name": "Sister Location",
@@ -36,10 +198,46 @@
         "icon": "Games/Sister Location/Icon.png"
     },
     {
+        "name": "Subway-Surfer-Beijing",
+        "type": "html",
+        "path": "Games/Subway-Surfer-Beijing/index.html",
+        "icon": "Games/Subway-Surfer-Beijing/Icon.png"
+    },
+    {
         "name": "Pizza Simulator",
         "type": "html",
         "path": "Games/Pizza Simulator/index.html",
         "icon": "Games/Pizza Simulator/Icon.png"
+    },
+    {
+        "name": "aquapark-slides",
+        "type": "html",
+        "path": "Games/aquapark-slides/index.html",
+        "icon": "Games/aquapark-slides/Icon.png"
+    },
+    {
+        "name": "cookieclickeralt",
+        "type": "html",
+        "path": "Games/cookieclickeralt/index.html",
+        "icon": "Games/cookieclickeralt/Icon.png"
+    },
+    {
+        "name": "backrooms",
+        "type": "html",
+        "path": "Games/backrooms/index.html",
+        "icon": "Games/backrooms/Icon.png"
+    },
+    {
+        "name": "bottle-flip-3d",
+        "type": "html",
+        "path": "Games/bottle-flip-3d/index.html",
+        "icon": "Games/bottle-flip-3d/Icon.png"
+    },
+    {
+        "name": "bloxors",
+        "type": "html",
+        "path": "Games/bloxors/index.html",
+        "icon": "Games/bloxors/Icon.png"
     },
     {
         "name": "Fnaf World",
@@ -52,6 +250,24 @@
         "type": "html",
         "path": "Games/Fnaf 3/index.html",
         "icon": "Games/Fnaf 3/Icon.png"
+    },
+    {
+        "name": "bloonstd2",
+        "type": "html",
+        "path": "Games/bloonstd2/index.html",
+        "icon": "Games/bloonstd2/Icon.png"
+    },
+    {
+        "name": "backrooms2d",
+        "type": "html",
+        "path": "Games/backrooms2d/backrooms2d.html",
+        "icon": "Games/backrooms2d/Icon.png"
+    },
+    {
+        "name": "clicker-heroes",
+        "type": "html",
+        "path": "Games/clicker-heroes/index.html",
+        "icon": "Games/clicker-heroes/Icon.png"
     },
     {
         "name": "Minecraft",
