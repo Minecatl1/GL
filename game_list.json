@@ -61,12 +61,6 @@
     },
     {
         "name": "Rocket-League",
-        "type": "py",
-        "path": "Games/Rocket-League/dehar.py",
-        "icon": "Games/Rocket-League/Icon.png"
-    },
-    {
-        "name": "Rocket-League",
         "type": "html",
         "path": "Games/Rocket-League/index.html",
         "icon": "Games/Rocket-League/Icon.png"
@@ -100,12 +94,6 @@
         "type": "html",
         "path": "Games/ducklife1/index.html",
         "icon": "Games/ducklife1/Icon.png"
-    },
-    {
-        "name": "cookie-clicker",
-        "type": "html",
-        "path": "Games/cookie-clicker/delete.html",
-        "icon": "Games/cookie-clicker/Icon.png"
     },
     {
         "name": "cookie-clicker",
