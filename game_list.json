@@ -54,12 +54,6 @@
         "icon": "Games/crossyroad/Icon.png"
     },
     {
-        "name": "1v1lol",
-        "type": "html",
-        "path": "Games/1v1lol/index.html",
-        "icon": "Games/1v1lol/Icon.png"
-    },
-    {
         "name": "ducklife2",
         "type": "html",
         "path": "Games/ducklife2/index.html",
