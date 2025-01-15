@@ -20,7 +20,7 @@
     {
         "name": "bitlife",
         "type": "html",
-        "path": "Games/bitlife/index.html",
+        "path": "Games/bitlife/play.html",
         "icon": "Games/bitlife/Icon.png"
     },
     {
@@ -48,16 +48,16 @@
         "icon": "Games/Fnaf 1/Icon.png"
     },
     {
-        "name": "bitlife-life-simulator",
-        "type": "html",
-        "path": "Games/bitlife-life-simulator/play.html",
-        "icon": "Games/bitlife-life-simulator/Icon.png"
-    },
-    {
         "name": "crossyroad",
         "type": "html",
         "path": "Games/crossyroad/index.html",
         "icon": "Games/crossyroad/Icon.png"
+    },
+    {
+        "name": "1v1lol",
+        "type": "html",
+        "path": "Games/1v1lol/index.html",
+        "icon": "Games/1v1lol/Icon.png"
     },
     {
         "name": "ducklife2",
@@ -214,12 +214,6 @@
         "type": "html",
         "path": "Games/aquapark-slides/index.html",
         "icon": "Games/aquapark-slides/Icon.png"
-    },
-    {
-        "name": "cookieclickeralt",
-        "type": "html",
-        "path": "Games/cookieclickeralt/index.html",
-        "icon": "Games/cookieclickeralt/Icon.png"
     },
     {
         "name": "backrooms",
