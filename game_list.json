@@ -253,7 +253,8 @@
     },
     {
         "name": "Shell Shockers",
-        "type": "web",
-        "url": "Https://shellshockers.wiki"
+        "type": "html",
+        "path": "Games/Shell Shockers/index.html",
+        "icon": "Games/Shell Shockers/Icon.png"
     }
 ]
