@@ -36,7 +36,7 @@
         "icon": "Games/fruitninja/Icon.png"
     },
     {
-        "name": "basketball-stars",
+        "name": "basketball stars",
         "type": "html",
         "path": "Games/basketball-stars/index.html",
         "icon": "Games/basketball-stars/Icon.png"
@@ -48,25 +48,25 @@
         "icon": "Games/Fnaf 1/Icon.png"
     },
     {
-        "name": "crossyroad",
+        "name": "crossy road",
         "type": "html",
         "path": "Games/crossyroad/index.html",
         "icon": "Games/crossyroad/Icon.png"
     },
     {
-        "name": "ducklife2",
+        "name": "duck life 2",
         "type": "html",
         "path": "Games/ducklife2/index.html",
         "icon": "Games/ducklife2/Icon.png"
     },
     {
-        "name": "Rocket-League",
+        "name": "Rocket League",
         "type": "html",
         "path": "Games/Rocket-League/index.html",
         "icon": "Games/Rocket-League/Icon.png"
     },
     {
-        "name": "dumbwaystodie",
+        "name": "dumb ways to die",
         "type": "html",
         "path": "Games/dumbwaystodie/dumbwaystodie.html",
         "icon": "Games/dumbwaystodie/Icon.png"
@@ -78,7 +78,7 @@
         "icon": "Games/Fnaf 4/Icon.png"
     },
     {
-        "name": "cars-simulator",
+        "name": "cars simulator",
         "type": "html",
         "path": "Games/cars-simulator/index.html",
         "icon": "Games/cars-simulator/Icon.png"
@@ -90,19 +90,19 @@
         "icon": "Games/2048/Icon.png"
     },
     {
-        "name": "ducklife1",
+        "name": "duck life 1",
         "type": "html",
         "path": "Games/ducklife1/index.html",
         "icon": "Games/ducklife1/Icon.png"
     },
     {
-        "name": "cookie-clicker",
+        "name": "Cookie Clicker",
         "type": "html",
-        "path": "Games/cookie-clicker/index.html",
-        "icon": "Games/cookie-clicker/Icon.png"
+        "path": "Games/Cookie-Clicker/index.html",
+        "icon": "Games/Cookie-Clicker/Icon.png"
     },
     {
-        "name": "bloonstd",
+        "name": "bloons td",
         "type": "html",
         "path": "Games/bloonstd/index.html",
         "icon": "Games/bloonstd/Icon.png"
