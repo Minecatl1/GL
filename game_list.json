@@ -1,908 +1,303 @@
 [
     {
-        "name": "index",
+        "name": "basketbros io",
         "type": "html",
         "path": "Games/basketbros-io/index.html",
-        "icon": null
+        "icon": "Games/basketbros-io/Icon.png"
     },
     {
         "name": "backrooms2d",
         "type": "html",
         "path": "Games/backrooms2d/backrooms2d.html",
-        "icon": null
+        "icon": "Games/backrooms2d/Icon.png"
     },
     {
-        "name": "index",
+        "name": "basketball stars",
         "type": "html",
         "path": "Games/basketball-stars/index.html",
-        "icon": null
+        "icon": "Games/basketball-stars/Icon.png"
     },
     {
-        "name": "index",
+        "name": "Shell Shockers",
         "type": "html",
         "path": "Games/Shell Shockers/index.html",
-        "icon": null
+        "icon": "Games/Shell Shockers/Icon.png"
     },
     {
-        "name": "index",
+        "name": "drive mad",
         "type": "html",
         "path": "Games/drive-mad/index.html",
         "icon": null
     },
     {
-        "name": "e",
-        "type": "html",
-        "path": "Games/drive-mad/webapp/e.html",
-        "icon": null
-    },
-    {
-        "name": "index",
+        "name": "Subway Surfer Beijing",
         "type": "html",
         "path": "Games/Subway-Surfer-Beijing/index.html",
-        "icon": null
+        "icon": "Games/Subway-Surfer-Beijing/Icon.png"
     },
     {
-        "name": "index",
+        "name": "Moto X3M",
         "type": "html",
         "path": "Games/Moto-X3M/index.html",
         "icon": null
     },
     {
-        "name": "index",
+        "name": "bloxors",
         "type": "html",
         "path": "Games/bloxors/index.html",
-        "icon": null
+        "icon": "Games/bloxors/Icon.png"
     },
     {
-        "name": "index",
+        "name": "Fnaf World",
         "type": "html",
         "path": "Games/Fnaf World/index.html",
-        "icon": null
+        "icon": "Games/Fnaf World/Icon.png"
     },
     {
-        "name": "index",
+        "name": "aquapark slides",
         "type": "html",
         "path": "Games/aquapark-slides/index.html",
-        "icon": null
+        "icon": "Games/aquapark-slides/Icon.png"
     },
     {
-        "name": "index",
+        "name": "Rocket League",
         "type": "html",
         "path": "Games/Rocket-League/index.html",
-        "icon": null
+        "icon": "Games/Rocket-League/Icon.png"
     },
     {
-        "name": "index",
+        "name": "cell machine",
         "type": "html",
         "path": "Games/cell-machine/index.html",
-        "icon": null
+        "icon": "Games/cell-machine/Icon.png"
     },
     {
-        "name": "index",
+        "name": "Fnaf 3",
         "type": "html",
         "path": "Games/Fnaf 3/index.html",
-        "icon": null
+        "icon": "Games/Fnaf 3/Icon.png"
     },
     {
-        "name": "index",
+        "name": "bloonstd2",
         "type": "html",
         "path": "Games/bloonstd2/index.html",
-        "icon": null
+        "icon": "Games/bloonstd2/Icon.png"
     },
     {
-        "name": "index",
+        "name": "angrybirds",
         "type": "html",
         "path": "Games/angrybirds/index.html",
-        "icon": null
+        "icon": "Games/angrybirds/Icon.png"
     },
     {
-        "name": "index",
+        "name": "Fnaf 4",
         "type": "html",
         "path": "Games/Fnaf 4/index.html",
-        "icon": null
+        "icon": "Games/Fnaf 4/Icon.png"
     },
     {
         "name": "dumbwaystodie",
         "type": "html",
         "path": "Games/dumbwaystodie/dumbwaystodie.html",
-        "icon": null
+        "icon": "Games/dumbwaystodie/Icon.png"
     },
     {
-        "name": "index",
+        "name": "ducklife2",
         "type": "html",
         "path": "Games/ducklife2/index.html",
-        "icon": null
+        "icon": "Games/ducklife2/Icon.png"
     },
     {
-        "name": "index",
+        "name": "crossyroad",
         "type": "html",
         "path": "Games/crossyroad/index.html",
-        "icon": null
+        "icon": "Games/crossyroad/Icon.png"
     },
     {
-        "name": "index",
+        "name": "bottle flip 3d",
         "type": "html",
         "path": "Games/bottle-flip-3d/index.html",
         "icon": null
     },
     {
-        "name": "index",
+        "name": "Ultimate Custom Night",
         "type": "html",
         "path": "Games/Ultimate Custom Night/index.html",
-        "icon": null
+        "icon": "Games/Ultimate Custom Night/Icon.png"
     },
     {
-        "name": "index",
+        "name": "bloonstd",
         "type": "html",
         "path": "Games/bloonstd/index.html",
-        "icon": null
+        "icon": "Games/bloonstd/Icon.png"
     },
     {
-        "name": "index",
+        "name": "funny shooter2",
         "type": "html",
         "path": "Games/funny-shooter2/index.html",
-        "icon": null
+        "icon": "Games/funny-shooter2/Icon.png"
     },
     {
-        "name": "index",
+        "name": "clicker heroes",
         "type": "html",
         "path": "Games/clicker-heroes/index.html",
-        "icon": null
+        "icon": "Games/clicker-heroes/Icon.png"
     },
     {
-        "name": "index",
+        "name": "drift hunters",
         "type": "html",
         "path": "Games/drift-hunters/index.html",
-        "icon": null
+        "icon": "Games/drift-hunters/Icon.png"
     },
     {
-        "name": "index",
+        "name": "fruitninja",
         "type": "html",
         "path": "Games/fruitninja/index.html",
-        "icon": null
+        "icon": "Games/fruitninja/Icon.png"
     },
+
     {
-        "name": "giFtvwvxkrxjUwJeo",
-        "type": "html",
-        "path": "Games/fruitninja/files/giFtvwvxkrxjUwJeo.html",
-        "icon": null
-    },
-    {
-        "name": "D2cJ4WQUIZxjT7f",
-        "type": "html",
-        "path": "Games/fruitninja/files/D2cJ4WQUIZxjT7f.html",
-        "icon": null
-    },
-    {
-        "name": "a1eDnzhrMRwPKJH0",
-        "type": "html",
-        "path": "Games/fruitninja/files/a1eDnzhrMRwPKJH0.html",
-        "icon": null
-    },
-    {
-        "name": "ex6f7GgZ2CQwHPC2yh",
-        "type": "html",
-        "path": "Games/fruitninja/files/ex6f7GgZ2CQwHPC2yh.html",
-        "icon": null
-    },
-    {
-        "name": "nKpOSHPb4di88ah",
-        "type": "html",
-        "path": "Games/fruitninja/files/nKpOSHPb4di88ah.html",
-        "icon": null
-    },
-    {
-        "name": "NVCjZh4lg3lMMhR4",
-        "type": "html",
-        "path": "Games/fruitninja/files/NVCjZh4lg3lMMhR4.html",
-        "icon": null
-    },
-    {
-        "name": "HgRDoUBBrKrH1FER",
-        "type": "html",
-        "path": "Games/fruitninja/files/HgRDoUBBrKrH1FER.html",
-        "icon": null
-    },
-    {
-        "name": "e1qG3uTkusixWIM",
-        "type": "html",
-        "path": "Games/fruitninja/files/e1qG3uTkusixWIM.html",
-        "icon": null
-    },
-    {
-        "name": "pZZ10kUMjEgAc5m9A",
-        "type": "html",
-        "path": "Games/fruitninja/files/pZZ10kUMjEgAc5m9A.html",
-        "icon": null
-    },
-    {
-        "name": "86X0cZOQ6OKvQCJ",
-        "type": "html",
-        "path": "Games/fruitninja/files/86X0cZOQ6OKvQCJ.html",
-        "icon": null
-    },
-    {
-        "name": "H0JEUbWIrXVdpwH4E",
-        "type": "html",
-        "path": "Games/fruitninja/files/H0JEUbWIrXVdpwH4E.html",
-        "icon": null
-    },
-    {
-        "name": "afkVphiedgi6PZGO",
-        "type": "html",
-        "path": "Games/fruitninja/files/afkVphiedgi6PZGO.html",
-        "icon": null
-    },
-    {
-        "name": "kl7O8XVzBpRVKHj",
-        "type": "html",
-        "path": "Games/fruitninja/files/kl7O8XVzBpRVKHj.html",
-        "icon": null
-    },
-    {
-        "name": "R2o0Zw1R4ViBQ4e",
-        "type": "html",
-        "path": "Games/fruitninja/files/R2o0Zw1R4ViBQ4e.html",
-        "icon": null
-    },
-    {
-        "name": "kx8lbLGNVxkBieJLf",
-        "type": "html",
-        "path": "Games/fruitninja/files/kx8lbLGNVxkBieJLf.html",
-        "icon": null
-    },
-    {
-        "name": "GVSTVw66yGd30YB",
-        "type": "html",
-        "path": "Games/fruitninja/files/GVSTVw66yGd30YB.html",
-        "icon": null
-    },
-    {
-        "name": "8zuTlBtzdA78IHrb7",
-        "type": "html",
-        "path": "Games/fruitninja/files/8zuTlBtzdA78IHrb7.html",
-        "icon": null
-    },
-    {
-        "name": "jn3qsJN5u4b1bYKlzN",
-        "type": "html",
-        "path": "Games/fruitninja/files/jn3qsJN5u4b1bYKlzN.html",
-        "icon": null
-    },
-    {
-        "name": "GSv5U3JULJZSV44CzK2",
-        "type": "html",
-        "path": "Games/fruitninja/files/GSv5U3JULJZSV44CzK2.html",
-        "icon": null
-    },
-    {
-        "name": "KnrDmJnaGDTjNKup",
-        "type": "html",
-        "path": "Games/fruitninja/files/KnrDmJnaGDTjNKup.html",
-        "icon": null
-    },
-    {
-        "name": "XpJ87uwzVNjqKnIGQ8",
-        "type": "html",
-        "path": "Games/fruitninja/files/XpJ87uwzVNjqKnIGQ8.html",
-        "icon": null
-    },
-    {
-        "name": "EWXU0eJilTmgbLpPf",
-        "type": "html",
-        "path": "Games/fruitninja/files/EWXU0eJilTmgbLpPf.html",
-        "icon": null
-    },
-    {
-        "name": "9CZOH5vLWNCSuIAZK",
-        "type": "html",
-        "path": "Games/fruitninja/files/9CZOH5vLWNCSuIAZK.html",
-        "icon": null
-    },
-    {
-        "name": "fEjdkbnEw6fc5ST",
-        "type": "html",
-        "path": "Games/fruitninja/files/fEjdkbnEw6fc5ST.html",
-        "icon": null
-    },
-    {
-        "name": "IYMQJuLrJTQHS3b2c5",
-        "type": "html",
-        "path": "Games/fruitninja/files/IYMQJuLrJTQHS3b2c5.html",
-        "icon": null
-    },
-    {
-        "name": "mCGYxrSkYw9eJ07SQ",
-        "type": "html",
-        "path": "Games/fruitninja/files/mCGYxrSkYw9eJ07SQ.html",
-        "icon": null
-    },
-    {
-        "name": "qwQ3SZ2FyOJoO0nzPf",
-        "type": "html",
-        "path": "Games/fruitninja/files/qwQ3SZ2FyOJoO0nzPf.html",
-        "icon": null
-    },
-    {
-        "name": "zEaFitf4xZJmRd9",
-        "type": "html",
-        "path": "Games/fruitninja/files/zEaFitf4xZJmRd9.html",
-        "icon": null
-    },
-    {
-        "name": "BpzObzUleqNLloBekP",
-        "type": "html",
-        "path": "Games/fruitninja/files/BpzObzUleqNLloBekP.html",
-        "icon": null
-    },
-    {
-        "name": "ioogroZD7ejlLiSL7j9",
-        "type": "html",
-        "path": "Games/fruitninja/files/ioogroZD7ejlLiSL7j9.html",
-        "icon": null
-    },
-    {
-        "name": "Tr82jyc3H5kIlLe",
-        "type": "html",
-        "path": "Games/fruitninja/files/Tr82jyc3H5kIlLe.html",
-        "icon": null
-    },
-    {
-        "name": "2sWVQxykdcXX0IFsZ",
-        "type": "html",
-        "path": "Games/fruitninja/files/2sWVQxykdcXX0IFsZ.html",
-        "icon": null
-    },
-    {
-        "name": "R0Y27QTAQE9gWgmu",
-        "type": "html",
-        "path": "Games/fruitninja/files/R0Y27QTAQE9gWgmu.html",
-        "icon": null
-    },
-    {
-        "name": "EhxkLpa44FjZ5wb",
-        "type": "html",
-        "path": "Games/fruitninja/files/EhxkLpa44FjZ5wb.html",
-        "icon": null
-    },
-    {
-        "name": "2NiW5KuKt0l5AE0NeSa",
-        "type": "html",
-        "path": "Games/fruitninja/files/2NiW5KuKt0l5AE0NeSa.html",
-        "icon": null
-    },
-    {
-        "name": "F83VtcCc3lKnHLO",
-        "type": "html",
-        "path": "Games/fruitninja/files/F83VtcCc3lKnHLO.html",
-        "icon": null
-    },
-    {
-        "name": "KhcLWfRUMi05hpx",
-        "type": "html",
-        "path": "Games/fruitninja/files/KhcLWfRUMi05hpx.html",
-        "icon": null
-    },
-    {
-        "name": "K2RYX3ZI1h3rRS61",
-        "type": "html",
-        "path": "Games/fruitninja/files/K2RYX3ZI1h3rRS61.html",
-        "icon": null
-    },
-    {
-        "name": "Qk8LE5vKfNM7lI4",
-        "type": "html",
-        "path": "Games/fruitninja/files/Qk8LE5vKfNM7lI4.html",
-        "icon": null
-    },
-    {
-        "name": "QGgK8UikgrwCyWTrD8",
-        "type": "html",
-        "path": "Games/fruitninja/files/QGgK8UikgrwCyWTrD8.html",
-        "icon": null
-    },
-    {
-        "name": "UI82Yrhnu1izDM0",
-        "type": "html",
-        "path": "Games/fruitninja/files/UI82Yrhnu1izDM0.html",
-        "icon": null
-    },
-    {
-        "name": "cy7x6wITzXGa4RQElx",
-        "type": "html",
-        "path": "Games/fruitninja/files/cy7x6wITzXGa4RQElx.html",
-        "icon": null
-    },
-    {
-        "name": "sDwLb29W3KW6kd30o",
-        "type": "html",
-        "path": "Games/fruitninja/files/sDwLb29W3KW6kd30o.html",
-        "icon": null
-    },
-    {
-        "name": "xbaXLWJzJ8cFYTcXl1",
-        "type": "html",
-        "path": "Games/fruitninja/files/xbaXLWJzJ8cFYTcXl1.html",
-        "icon": null
-    },
-    {
-        "name": "qjbx18my385jv2Y",
-        "type": "html",
-        "path": "Games/fruitninja/files/qjbx18my385jv2Y.html",
-        "icon": null
-    },
-    {
-        "name": "btY9H18qrdtWGGjL",
-        "type": "html",
-        "path": "Games/fruitninja/files/btY9H18qrdtWGGjL.html",
-        "icon": null
-    },
-    {
-        "name": "HTHKBvxUGBtlFowqws9",
-        "type": "html",
-        "path": "Games/fruitninja/files/HTHKBvxUGBtlFowqws9.html",
-        "icon": null
-    },
-    {
-        "name": "iDcXK55EjDGQMQJ",
-        "type": "html",
-        "path": "Games/fruitninja/files/iDcXK55EjDGQMQJ.html",
-        "icon": null
-    },
-    {
-        "name": "i3G1ob32fBH7pWJA",
-        "type": "html",
-        "path": "Games/fruitninja/files/i3G1ob32fBH7pWJA.html",
-        "icon": null
-    },
-    {
-        "name": "IgBUr16YGiRTipKNPB",
-        "type": "html",
-        "path": "Games/fruitninja/files/IgBUr16YGiRTipKNPB.html",
-        "icon": null
-    },
-    {
-        "name": "jRgtwZf3mC6x2KAP",
-        "type": "html",
-        "path": "Games/fruitninja/files/jRgtwZf3mC6x2KAP.html",
-        "icon": null
-    },
-    {
-        "name": "Efu9qZZitYUJXMBBob",
-        "type": "html",
-        "path": "Games/fruitninja/files/Efu9qZZitYUJXMBBob.html",
-        "icon": null
-    },
-    {
-        "name": "8ugvN9j3HUkosg9wY",
-        "type": "html",
-        "path": "Games/fruitninja/files/8ugvN9j3HUkosg9wY.html",
-        "icon": null
-    },
-    {
-        "name": "GlGq5kkAAvvPC3Po3",
-        "type": "html",
-        "path": "Games/fruitninja/files/GlGq5kkAAvvPC3Po3.html",
-        "icon": null
-    },
-    {
-        "name": "6q1KdO5KPM5bKmy",
-        "type": "html",
-        "path": "Games/fruitninja/files/6q1KdO5KPM5bKmy.html",
-        "icon": null
-    },
-    {
-        "name": "QS3dMkkiSQTZSPzxqTd",
-        "type": "html",
-        "path": "Games/fruitninja/files/QS3dMkkiSQTZSPzxqTd.html",
-        "icon": null
-    },
-    {
-        "name": "m3CIqviAIsl5MUm",
-        "type": "html",
-        "path": "Games/fruitninja/files/m3CIqviAIsl5MUm.html",
-        "icon": null
-    },
-    {
-        "name": "aH0CsCkYwRrM8Cclg",
-        "type": "html",
-        "path": "Games/fruitninja/files/aH0CsCkYwRrM8Cclg.html",
-        "icon": null
-    },
-    {
-        "name": "KaPXdd9TxQWrrLm8LbJ",
-        "type": "html",
-        "path": "Games/fruitninja/files/KaPXdd9TxQWrrLm8LbJ.html",
-        "icon": null
-    },
-    {
-        "name": "OMBMBhxG1NE0NM9HR",
-        "type": "html",
-        "path": "Games/fruitninja/files/OMBMBhxG1NE0NM9HR.html",
-        "icon": null
-    },
-    {
-        "name": "zMQd9SP4Hiu3u0gg7q",
-        "type": "html",
-        "path": "Games/fruitninja/files/zMQd9SP4Hiu3u0gg7q.html",
-        "icon": null
-    },
-    {
-        "name": "qEvxCgSYA7EIGmJ1dv",
-        "type": "html",
-        "path": "Games/fruitninja/files/qEvxCgSYA7EIGmJ1dv.html",
-        "icon": null
-    },
-    {
-        "name": "LfV8Csg95hBGehSw",
-        "type": "html",
-        "path": "Games/fruitninja/files/LfV8Csg95hBGehSw.html",
-        "icon": null
-    },
-    {
-        "name": "oYfwBgFFSYgQ1icWkZn",
-        "type": "html",
-        "path": "Games/fruitninja/files/oYfwBgFFSYgQ1icWkZn.html",
-        "icon": null
-    },
-    {
-        "name": "mhCVbQaZMSwgUtenh",
-        "type": "html",
-        "path": "Games/fruitninja/files/mhCVbQaZMSwgUtenh.html",
-        "icon": null
-    },
-    {
-        "name": "1MuMaCgI4N9p32hQ",
-        "type": "html",
-        "path": "Games/fruitninja/files/1MuMaCgI4N9p32hQ.html",
-        "icon": null
-    },
-    {
-        "name": "PRc3SlL5HnmqOnvF9",
-        "type": "html",
-        "path": "Games/fruitninja/files/PRc3SlL5HnmqOnvF9.html",
-        "icon": null
-    },
-    {
-        "name": "E1WO6ZTnGoZJVFU0",
-        "type": "html",
-        "path": "Games/fruitninja/files/E1WO6ZTnGoZJVFU0.html",
-        "icon": null
-    },
-    {
-        "name": "cF5uB27OwonvJ2Gaij",
-        "type": "html",
-        "path": "Games/fruitninja/files/cF5uB27OwonvJ2Gaij.html",
-        "icon": null
-    },
-    {
-        "name": "uJk3gRwGZcUkT1rwQ",
-        "type": "html",
-        "path": "Games/fruitninja/files/uJk3gRwGZcUkT1rwQ.html",
-        "icon": null
-    },
-    {
-        "name": "M0X7t0GsFnXpK71gNkt",
-        "type": "html",
-        "path": "Games/fruitninja/files/M0X7t0GsFnXpK71gNkt.html",
-        "icon": null
-    },
-    {
-        "name": "qZDk17tU2ZMAYsys",
-        "type": "html",
-        "path": "Games/fruitninja/files/qZDk17tU2ZMAYsys.html",
-        "icon": null
-    },
-    {
-        "name": "1qbxVy0HexlhNi0p6",
-        "type": "html",
-        "path": "Games/fruitninja/files/1qbxVy0HexlhNi0p6.html",
-        "icon": null
-    },
-    {
-        "name": "CwytvasHWyjzQFhxU",
-        "type": "html",
-        "path": "Games/fruitninja/files/CwytvasHWyjzQFhxU.html",
-        "icon": null
-    },
-    {
-        "name": "9btYMClSSUHQxfxgHW",
-        "type": "html",
-        "path": "Games/fruitninja/files/9btYMClSSUHQxfxgHW.html",
-        "icon": null
-    },
-    {
-        "name": "H1KIHX5JDQOZpYNdl",
-        "type": "html",
-        "path": "Games/fruitninja/files/H1KIHX5JDQOZpYNdl.html",
-        "icon": null
-    },
-    {
-        "name": "LrSC6AD3kDgV7gd",
-        "type": "html",
-        "path": "Games/fruitninja/files/LrSC6AD3kDgV7gd.html",
-        "icon": null
-    },
-    {
-        "name": "pFIZHwYCnX0DemW5P8",
-        "type": "html",
-        "path": "Games/fruitninja/files/pFIZHwYCnX0DemW5P8.html",
-        "icon": null
-    },
-    {
-        "name": "h1Bn272KNvI5yugc6w",
-        "type": "html",
-        "path": "Games/fruitninja/files/h1Bn272KNvI5yugc6w.html",
-        "icon": null
-    },
-    {
-        "name": "qLlMNDtnpTmAAbZi",
-        "type": "html",
-        "path": "Games/fruitninja/files/qLlMNDtnpTmAAbZi.html",
-        "icon": null
-    },
-    {
-        "name": "Hhjxxcz5iPEBPI0Q",
-        "type": "html",
-        "path": "Games/fruitninja/files/Hhjxxcz5iPEBPI0Q.html",
-        "icon": null
-    },
-    {
-        "name": "ouJlFzg1fJH8AnoK",
-        "type": "html",
-        "path": "Games/fruitninja/files/ouJlFzg1fJH8AnoK.html",
-        "icon": null
-    },
-    {
-        "name": "NmwRV1dNcJQTrNqtnO",
-        "type": "html",
-        "path": "Games/fruitninja/files/NmwRV1dNcJQTrNqtnO.html",
-        "icon": null
-    },
-    {
-        "name": "82it5XUTdsGRkNUadU",
-        "type": "html",
-        "path": "Games/fruitninja/files/82it5XUTdsGRkNUadU.html",
-        "icon": null
-    },
-    {
-        "name": "umTRuB7Skk6fz0YMrc",
-        "type": "html",
-        "path": "Games/fruitninja/files/umTRuB7Skk6fz0YMrc.html",
-        "icon": null
-    },
-    {
-        "name": "8iRPZ6rVcvaw26Ffh",
-        "type": "html",
-        "path": "Games/fruitninja/files/8iRPZ6rVcvaw26Ffh.html",
-        "icon": null
-    },
-    {
-        "name": "GaTc11IljlhON3Ihf3",
-        "type": "html",
-        "path": "Games/fruitninja/files/GaTc11IljlhON3Ihf3.html",
-        "icon": null
-    },
-    {
-        "name": "UF59YsmRY8nPZ8wNdHO",
-        "type": "html",
-        "path": "Games/fruitninja/files/UF59YsmRY8nPZ8wNdHO.html",
-        "icon": null
-    },
-    {
-        "name": "TvENnYXHxZMtXTz",
-        "type": "html",
-        "path": "Games/fruitninja/files/TvENnYXHxZMtXTz.html",
-        "icon": null
-    },
-    {
-        "name": "wZr9q1ueDi8lxH1iB",
-        "type": "html",
-        "path": "Games/fruitninja/files/wZr9q1ueDi8lxH1iB.html",
-        "icon": null
-    },
-    {
-        "name": "n5JMBp4lZlvhU0MFh8",
-        "type": "html",
-        "path": "Games/fruitninja/files/n5JMBp4lZlvhU0MFh8.html",
-        "icon": null
-    },
-    {
-        "name": "LMd2FCuxqMDUz4w",
-        "type": "html",
-        "path": "Games/fruitninja/files/LMd2FCuxqMDUz4w.html",
-        "icon": null
-    },
-    {
-        "name": "jsXc9TC8vzPcsdvZ",
-        "type": "html",
-        "path": "Games/fruitninja/files/jsXc9TC8vzPcsdvZ.html",
-        "icon": null
-    },
-    {
-        "name": "pIgrPDx93SB1aIg",
-        "type": "html",
-        "path": "Games/fruitninja/files/pIgrPDx93SB1aIg.html",
-        "icon": null
-    },
-    {
-        "name": "p6XHSKBCY3eF8hQ",
-        "type": "html",
-        "path": "Games/fruitninja/files/p6XHSKBCY3eF8hQ.html",
-        "icon": null
-    },
-    {
-        "name": "9k01QNmKu5DHgT47TH",
-        "type": "html",
-        "path": "Games/fruitninja/files/9k01QNmKu5DHgT47TH.html",
-        "icon": null
-    },
-    {
-        "name": "aayyH9AmveVSPDM3dML",
-        "type": "html",
-        "path": "Games/fruitninja/files/aayyH9AmveVSPDM3dML.html",
-        "icon": null
-    },
-    {
-        "name": "gAVetnC1FD8hMK8gHI",
-        "type": "html",
-        "path": "Games/fruitninja/files/gAVetnC1FD8hMK8gHI.html",
-        "icon": null
-    },
-    {
-        "name": "F7dkEDMpq91f3OT8yf",
-        "type": "html",
-        "path": "Games/fruitninja/files/F7dkEDMpq91f3OT8yf.html",
-        "icon": null
-    },
-    {
-        "name": "Q9bTAhSo22A3dC6",
-        "type": "html",
-        "path": "Games/fruitninja/files/Q9bTAhSo22A3dC6.html",
-        "icon": null
-    },
-    {
-        "name": "DZAK4y3G2woyPeZpSW",
-        "type": "html",
-        "path": "Games/fruitninja/files/DZAK4y3G2woyPeZpSW.html",
-        "icon": null
-    },
-    {
-        "name": "ti95PBWNDCkWldO5",
-        "type": "html",
-        "path": "Games/fruitninja/files/ti95PBWNDCkWldO5.html",
-        "icon": null
-    },
-    {
-        "name": "4hfTVMbJdIrfa2VzdU",
-        "type": "html",
-        "path": "Games/fruitninja/files/4hfTVMbJdIrfa2VzdU.html",
-        "icon": null
-    },
-    {
-        "name": "VeeEe9sYxOuE1ceh",
-        "type": "html",
-        "path": "Games/fruitninja/files/VeeEe9sYxOuE1ceh.html",
-        "icon": null
-    },
-    {
-        "name": "NmyVpN9BVuuDpLwL",
-        "type": "html",
-        "path": "Games/fruitninja/files/NmyVpN9BVuuDpLwL.html",
-        "icon": null
-    },
-    {
-        "name": "vLLIEORa6x0NfZITng",
-        "type": "html",
-        "path": "Games/fruitninja/files/vLLIEORa6x0NfZITng.html",
-        "icon": null
-    },
-    {
-        "name": "VcOkqeQu5i480V1648",
-        "type": "html",
-        "path": "Games/fruitninja/files/VcOkqeQu5i480V1648.html",
-        "icon": null
-    },
-    {
-        "name": "DcArkQ0JKglm1WwTK",
-        "type": "html",
-        "path": "Games/fruitninja/files/DcArkQ0JKglm1WwTK.html",
-        "icon": null
-    },
-    {
-        "name": "index",
+        "name": "ducklife3",
         "type": "html",
         "path": "Games/ducklife3/index.html",
-        "icon": null
+        "icon": "Games/ducklife3/Icon.png"
     },
     {
-        "name": "index",
+        "name": "Pizza Simulator",
         "type": "html",
         "path": "Games/Pizza Simulator/index.html",
-        "icon": null
+        "icon": "Games/Pizza Simulator/Icon.png"
     },
     {
-        "name": "index",
+        "name": "2048",
         "type": "html",
         "path": "Games/2048/index.html",
-        "icon": null
+        "icon": "Games/2048/Icon.png"
     },
     {
-        "name": "index",
+        "name": "fireboy and watergirl 2",
         "type": "html",
         "path": "Games/fireboy-and-watergirl-2/index.html",
-        "icon": null
+        "icon": "Games/fireboy-and-watergirl-2/Icon.png"
     },
     {
-        "name": "EaglercraftX",
+        "name": "Minecraft",
         "type": "html",
         "path": "Games/Minecraft/EaglercraftX.html",
-        "icon": null
+        "icon": "Games/Minecraft/Icon.png"
     },
     {
-        "name": "index",
+        "name": "Fnaf 2",
         "type": "html",
         "path": "Games/Fnaf 2/index.html",
-        "icon": null
+        "icon": "Games/Fnaf 2/Icon.png"
     },
     {
-        "name": "index",
+        "name": "DogeMiner",
         "type": "html",
         "path": "Games/DogeMiner/index.html",
-        "icon": null
+        "icon": "Games/DogeMiner/Icon.png"
     },
     {
-        "name": "index",
+        "name": "ducklife1",
         "type": "html",
         "path": "Games/ducklife1/index.html",
-        "icon": null
+        "icon": "Games/ducklife1/Icon.png"
     },
     {
-        "name": "index",
+        "name": "Fnaf 1",
         "type": "html",
         "path": "Games/Fnaf 1/index.html",
-        "icon": null
+        "icon": "Games/Fnaf 1/Icon.png"
     },
     {
-        "name": "index",
+        "name": "Sister Location",
         "type": "html",
         "path": "Games/Sister Location/index.html",
-        "icon": null
+        "icon": "Games/Sister Location/Icon.png"
     },
     {
-        "name": "index",
+        "name": "fnf",
         "type": "html",
         "path": "Games/fnf/index.html",
         "icon": null
     },
     {
-        "name": "index",
+        "name": "bitlife",
         "type": "html",
         "path": "Games/bitlife/index.html",
-        "icon": null
+        "icon": "Games/bitlife/Icon.png"
     },
     {
-        "name": "index",
+        "name": "Baldis Basics",
         "type": "html",
         "path": "Games/Baldis-Basics/index.html",
-        "icon": null
+        "icon": "Games/Baldis-Basics/Icon.png"
     },
     {
-        "name": "index",
+        "name": "doodle jump",
         "type": "html",
         "path": "Games/doodle-jump/index.html",
-        "icon": null
+        "icon": "Games/doodle-jump/Icon.png"
     },
     {
-        "name": "index",
+        "name": "backrooms",
         "type": "html",
         "path": "Games/backrooms/index.html",
+        "icon": "Games/backrooms/Icon.png"
+    },
+    {
+        "name": "cars simulator",
+        "type": "html",
+        "path": "Games/cars-simulator/index.html",
+        "icon": "Games/cars-simulator/Icon.png"
+    },
+    {
+        "name": "Super Mario Brothers",
+        "type": "nes",
+        "path": "Games/roms/Super Mario Brothers/SMB.nes",
         "icon": null
     },
     {
-        "name": "index",
-        "type": "html",
-        "path": "Games/cars-simulator/index.html",
+        "name": "Super Mario Brothers 3",
+        "type": "nes",
+        "path": "Games/roms/Super Mario Brothers 3/SMB3.nes",
+        "icon": null
+    },
+    {
+        "name": "Kirbys Adventure",
+        "type": "nes",
+        "path": "Games/roms/Kirbys Adventure/KirbysAdventure.nes",
+        "icon": null
+    },
+    {
+        "name": "Final Fantasy 3",
+        "type": "nes",
+        "path": "Games/roms/Final Fantasy 3/FinalFantasy3.nes",
+        "icon": null
+    },
+    {
+        "name": "starwars",
+        "type": "nes",
+        "path": "Games/roms/starwars/STARWARS.nes",
+        "icon": null
+    },
+    {
+        "name": "zelda 2",
+        "type": "nes",
+        "path": "Games/roms/zelda 2/ZELDA2.nes",
+        "icon": null
+    },
+    {
+        "name": "Super Mario Brothers 2",
+        "type": "nes",
+        "path": "Games/roms/Super Mario Brothers 2/SMB2.nes",
+        "icon": null
+    },
+    {
+        "name": "zelda",
+        "type": "nes",
+        "path": "Games/roms/zelda/ZELDA.nes",
         "icon": null
     }
 ]

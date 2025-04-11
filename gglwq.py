@@ -1,66 +1,73 @@
 import os
 import json
 
-def list_games(directory, file_extensions):
+def list_html_games(directory):
     games = []
-    
-    # Debugging: Print the directory being scanned
-    print(f"Scanning directory: {directory}")
+
+    print(f"Scanning for HTML5 games in directory: {directory}")
     
     for root, _, files in os.walk(directory):
         for file in files:
-            # Debugging: Print each file being considered
-            print(f"Found file: {file}")
-            
-            if file.endswith(tuple(file_extensions)):
+            if file.endswith('.html'):  # Only consider .html files for HTML5 games
+                game_name = os.path.basename(root).replace('-', ' ')  # Replace dashes with spaces
                 game_path = os.path.join(root, file)
-                game_name = os.path.splitext(file)[0]
-                game_type = file.split('.')[-1]
-                icon_path = os.path.join(root, 'icon.png') if os.path.exists(os.path.join(root, "icon.png")) else None
-                
-                # Debugging: Print the game details being added
-                print(f"Adding game: {game_name}, Type: {game_type}, Path: {game_path}, Icon: {icon_path}")
-                
+                icon_path = os.path.join(root, 'Icon.png') if os.path.exists(os.path.join(root, 'Icon.png')) else None
+
+                print(f"Adding HTML5 game: {game_name}, Path: {game_path}, Icon: {icon_path}")
+
                 games.append({
                     "name": game_name,
-                    "type": game_type,
+                    "type": "html",
                     "path": game_path,
                     "icon": icon_path
                 })
                 
-    # Debugging: Print the total number of games found
-    print(f"Total games found in {directory}: {len(games)}")
-    
+    return games
+
+def list_roms(directory):
+    games = []
+
+    print(f"Scanning for ROMs in directory: {directory}")
+
+    for root, dirs, files in os.walk(directory):
+        for dir_name in dirs:
+            rom_folder = os.path.join(root, dir_name)
+            for file in os.listdir(rom_folder):
+                if file.endswith(('.nes', '.snes', '.gba', '.gb', '.gen', '.bin')):  # Supported ROM extensions
+                    game_name = dir_name.replace('-', ' ')  # Replace dashes with spaces
+                    game_path = os.path.join(rom_folder, file)
+                    icon_path = os.path.join(rom_folder, 'Icon.png') if os.path.exists(os.path.join(rom_folder, 'icon.png')) else None
+
+                    print(f"Adding ROM: {game_name}, Path: {game_path}, Icon: {icon_path}")
+
+                    games.append({
+                        "name": game_name,
+                        "type": file.split('.')[-1],  # Infer the ROM type from the file extension
+                        "path": game_path,
+                        "icon": icon_path
+                    })
+                
     return games
 
 def main():
-    # Directories to scan
     games_dir = 'Games'
-    roms_dir = os.path.join(games_dir, 'roms')  # Roms subdirectory inside Games
-
-    # Supported file extensions for games
-    html5_extensions = ['.html']  # HTML5 games (skip .js files)
-    rom_extensions = ['.nes', '.snes', '.gba', '.gb', '.gen', '.bin']  # ROM files
+    roms_dir = os.path.join(games_dir, 'roms')  # Nested roms folder inside Games directory
 
     all_games = []
 
-    # Scan for HTML5 games in the Games directory
+    # Scan for HTML5 games
     print("Scanning for HTML5 games...")
-    all_games.extend(list_games(games_dir, html5_extensions))
+    all_games.extend(list_html_games(games_dir))
 
-    # Scan for ROMs in the roms subdirectory
+    # Scan for ROMs
     print("Scanning for ROMs...")
     if os.path.exists(roms_dir):
-        all_games.extend(list_games(roms_dir, rom_extensions))
-
-    # Debugging: Print the total number of games in the combined list
-    print(f"Total games in combined list: {len(all_games)}")
+        all_games.extend(list_roms(roms_dir))
 
     # Write to game_list.json
     with open('game_list.json', 'w') as file:
         json.dump(all_games, file, indent=4)
-        
-    # Debugging: Confirm that the JSON has been written
+
     print("game_list.json has been successfully written with the game data.")
 
 if __name__ == '__main__':
