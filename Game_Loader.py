@@ -8,7 +8,7 @@ def list_games(directory, file_extensions):
     games = []
     for game_dir in os.listdir(directory):
         game_path = os.path.join(directory, game_dir)
-        if os.path.isdir(game_path) and game_dir not in ["WebGames", "NESGames"]:
+        if os.path.isdir(game_path) and game_dir not in ["Roms"]:
             for file in os.listdir(game_path):
                 if file.endswith(tuple(file_extensions)):
                     games.append({
