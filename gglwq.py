@@ -1,74 +1,149 @@
 import os
 import json
+import glob
+from pathlib import Path
 
-def list_html_games(directory):
-    games = []
+# Configuration
+BASE_DIR = Path(__file__).parent
+GAMES_DIR = BASE_DIR / "Games"
+HTML5_DIR = GAMES_DIR / "html5"
+ROMS_DIR = GAMES_DIR / "roms"
+OUTPUT_JSON = BASE_DIR / "game_list.json"
 
-    print(f"Scanning for HTML5 games in directory: {directory}")
+# Supported ROM extensions mapped to emulator cores
+ROM_CORES = {
+    ".nes": "nes", ".smc": "snes", ".sfc": "snes", ".gba": "gba",
+    ".gb": "gb", ".gbc": "gb", ".md": "genesis", ".gen": "genesis"
+}
+
+# Preferred icon filenames (in order of priority)
+ICON_PRIORITY = ["icon.png", "logo.png", "cover.jpg", "thumbnail.png", "icon.jpg"]
+
+def find_icon(game_path):
+    """Find matching icon file in the game's own directory"""
+    game_dir = Path(game_path).parent
     
-    for root, _, files in os.walk(directory):
-        for file in files:
-            if file.endswith('.html'):  # Only consider .html files for HTML5 games
-                game_name = os.path.basename(root).replace('-', ' ')  # Replace dashes with spaces
-                game_path = os.path.join(root, file)
-                icon_path = os.path.join(root, 'Icon.png') if os.path.exists(os.path.join(root, 'Icon.png')) else None
+    # Check for preferred filenames first
+    for icon_name in ICON_PRIORITY:
+        icon_path = game_dir / icon_name
+        if icon_path.exists():
+            return str(icon_path.relative_to(BASE_DIR)).replace("\\", "/")
+    
+    # Fallback: search for any image file in the game directory
+    image_exts = ("*.png", "*.jpg", "*.jpeg", "*.svg", "*.gif")
+    for ext in image_exts:
+        for img_path in glob.glob(str(game_dir / ext)):
+            return str(Path(img_path).relative_to(BASE_DIR)).replace("\\", "/")
+    
+    # Final fallback: default icon
+    return "icons/default.png"
 
-                print(f"Adding HTML5 game: {game_name}, Path: {game_path}, Icon: {icon_path}")
-
-                games.append({
-                    "name": game_name,
-                    "type": "html",
-                    "path": game_path,
-                    "icon": icon_path
-                })
-                
-    return games
-
-def list_roms(directory):
+def scan_html5_games():
+    """Scan HTML5 games directory using folder names for game names"""
     games = []
-
-    print(f"Scanning for ROMs in directory: {directory}")
-
-    for root, dirs, files in os.walk(directory):
-        for dir_name in dirs:
-            rom_folder = os.path.join(root, dir_name)
-            for file in os.listdir(rom_folder):
-                if file.endswith(('.nes', '.snes', '.gba', '.gb', '.gen', '.bin')):  # Supported ROM extensions
-                    game_name = dir_name.replace('-', ' ')  # Replace dashes with spaces
-                    game_path = os.path.join(rom_folder, file)
-                    icon_path = os.path.join(rom_folder, 'Icon.png') if os.path.exists(os.path.join(rom_folder, 'icon.png')) else None
-
-                    print(f"Adding ROM: {game_name}, Path: {game_path}, Icon: {icon_path}")
-
-                    games.append({
-                        "name": game_name,
-                        "type": file.split('.')[-1],  # Infer the ROM type from the file extension
-                        "path": game_path,
-                        "icon": icon_path
-                    })
+    for game_dir in HTML5_DIR.iterdir():
+        if not game_dir.is_dir():
+            continue
+            
+        # Check for entry point files
+        entry_points = ["index.html", "game.html", "main.html", "start.html"]
+        for entry in entry_points:
+            if (game_dir / entry).exists():
+                game_name = game_dir.name
+                game_path = f"Games/html5/{game_name}/{entry}"
                 
+                games.append({
+                    "name": format_name(game_name),  # Use folder name for display
+                    "type": "html5",
+                    "path": game_path,
+                    "icon": find_icon(game_path)
+                })
+                break
     return games
 
-def main():
-    games_dir = 'Games'
-    roms_dir = os.path.join(games_dir, 'roms')  # Nested roms folder inside Games directory
+def scan_roms():
+    """Scan ROMs directory using filename for game names"""
+    roms = []
+    for system_dir in ROMS_DIR.iterdir():
+        if not system_dir.is_dir():
+            continue
+            
+        # Recursively scan for ROMs in system directories
+        for rom_file in system_dir.rglob("*.*"):
+            if not rom_file.is_file():
+                continue
+                
+            ext = rom_file.suffix.lower()
+            if ext not in ROM_CORES:
+                continue
+                
+            # Create relative path from base directory
+            rel_path = rom_file.relative_to(GAMES_DIR)
+            game_path = f"Games/{rel_path}"
+            
+            roms.append({
+                "name": format_name(rom_file.stem),
+                "type": "rom",
+                "path": game_path,
+                "icon": find_icon(game_path),
+                "core": ROM_CORES[ext]
+            })
+    return roms
 
-    all_games = []
+def format_name(raw_name):
+    """Convert filename/folder name to readable game name"""
+    # Replace underscores and hyphens with spaces
+    name = raw_name.replace("_", " ").replace("-", " ").title()
+    
+    # Common abbreviations to expand
+    abbreviations = {
+        "Gba": "GBA", "Snes": "SNES", "Nes": "NES", "Gb": "GB",
+        "Iii": "III", "Ii": "II", "Iv": "IV", "Rpg": "RPG",
+        "Hd": "HD", "3d": "3D", "Remastered": "Remastered"
+    }
+    
+    # Special case handling for Roman numerals
+    roman_numerals = {
+        " I ": " I ", " II ": " II ", " III ": " III ", " IV ": " IV ",
+        " V ": " V ", " VI ": " VI ", " VII ": " VII ", " VIII ": " VIII "
+    }
+    
+    # Process abbreviations
+    for abbr, full in abbreviations.items():
+        name = name.replace(f" {abbr} ", f" {full} ")
+        if name.endswith(f" {abbr}"):
+            name = name[:-len(abbr)] + full
+    
+    # Handle Roman numerals
+    for numeral, formatted in roman_numerals.items():
+        name = name.replace(numeral.lower(), formatted)
+    
+    # Remove file extensions from name
+    if "." in name:
+        name = name.split(".")[0]
+    
+    return name
 
-    # Scan for HTML5 games
-    print("Scanning for HTML5 games...")
-    all_games.extend(list_html_games(games_dir))
+def generate_game_list():
+    """Generate combined game list JSON"""
+    html5_games = scan_html5_games()
+    rom_games = scan_roms()
+    all_games = html5_games + rom_games
+    
+    # Sort alphabetically
+    all_games.sort(key=lambda x: x["name"])
+    
+    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+        json.dump(all_games, f, indent=2, ensure_ascii=False)
+        
+    print(f"Generated game list with {len(all_games)} entries")
+    print(f"- HTML5 games: {len(html5_games)}")
+    print(f"- ROMs: {len(rom_games)}")
+    print(f"Output saved to: {OUTPUT_JSON}")
 
-    # Scan for ROMs
-    print("Scanning for ROMs...")
-    if os.path.exists(roms_dir):
-        all_games.extend(list_roms(roms_dir))
-
-    # Write to game_list.json
-    with open('game_list.json', 'w') as file:
-        json.dump(all_games, file, indent=4)
-
-    print("game_list.json has been successfully written with the game data.")
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    # Create directories if missing
+    HTML5_DIR.mkdir(parents=True, exist_ok=True)
+    ROMS_DIR.mkdir(parents=True, exist_ok=True)
+    
+    generate_game_list()
