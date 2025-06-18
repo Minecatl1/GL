@@ -1,0 +1,292 @@
+[
+  {
+    "name": "2048",
+    "type": "html5",
+    "path": "Games/2048/index.html",
+    "icon": "Games/2048/Icon.png"
+  },
+  {
+    "name": "Angrybirds",
+    "type": "html5",
+    "path": "Games/angrybirds/index.html",
+    "icon": "Games/angrybirds/Icon.png"
+  },
+  {
+    "name": "Aquapark Slides",
+    "type": "html5",
+    "path": "Games/aquapark-slides/index.html",
+    "icon": "Games/aquapark-slides/Icon.png"
+  },
+  {
+    "name": "Backrooms",
+    "type": "html5",
+    "path": "Games/backrooms/index.html",
+    "icon": "Games/backrooms/Icon.png"
+  },
+  {
+    "name": "Baldis Basics",
+    "type": "html5",
+    "path": "Games/Baldis-Basics/index.html",
+    "icon": "Games/Baldis-Basics/Icon.png"
+  },
+  {
+    "name": "Basketball Stars",
+    "type": "html5",
+    "path": "Games/basketball-stars/index.html",
+    "icon": "Games/basketball-stars/Icon.png"
+  },
+  {
+    "name": "Basketbros Io",
+    "type": "html5",
+    "path": "Games/basketbros-io/index.html",
+    "icon": "Games/basketbros-io/favicon.png"
+  },
+  {
+    "name": "Bitlife",
+    "type": "html5",
+    "path": "Games/bitlife/index.html",
+    "icon": "Games/bitlife/Icon.png"
+  },
+  {
+    "name": "Bloonstd",
+    "type": "html5",
+    "path": "Games/bloonstd/index.html",
+    "icon": "Games/bloonstd/Icon.png"
+  },
+  {
+    "name": "Bloonstd2",
+    "type": "html5",
+    "path": "Games/bloonstd2/index.html",
+    "icon": "Games/bloonstd2/Icon.png"
+  },
+  {
+    "name": "Bloxors",
+    "type": "html5",
+    "path": "Games/bloxors/index.html",
+    "icon": "Games/bloxors/title.png"
+  },
+  {
+    "name": "Bottle Flip 3D",
+    "type": "html5",
+    "path": "Games/bottle-flip-3d/index.html",
+    "icon": "icons/default.png"
+  },
+  {
+    "name": "Cars Simulator",
+    "type": "html5",
+    "path": "Games/cars-simulator/index.html",
+    "icon": "Games/cars-simulator/Icon.png"
+  },
+  {
+    "name": "Cell Machine",
+    "type": "html5",
+    "path": "Games/cell-machine/index.html",
+    "icon": "Games/cell-machine/Icon.png"
+  },
+  {
+    "name": "Clicker Heroes",
+    "type": "html5",
+    "path": "Games/clicker-heroes/index.html",
+    "icon": "Games/clicker-heroes/Icon.png"
+  },
+  {
+    "name": "Crossyroad",
+    "type": "html5",
+    "path": "Games/crossyroad/index.html",
+    "icon": "Games/crossyroad/Icon.png"
+  },
+  {
+    "name": "Dogeminer",
+    "type": "html5",
+    "path": "Games/DogeMiner/index.html",
+    "icon": "Games/DogeMiner/Icon.png"
+  },
+  {
+    "name": "Doodle Jump",
+    "type": "html5",
+    "path": "Games/doodle-jump/index.html",
+    "icon": "Games/doodle-jump/sprites.png"
+  },
+  {
+    "name": "Drift Hunters",
+    "type": "html5",
+    "path": "Games/drift-hunters/index.html",
+    "icon": "Games/drift-hunters/Icon.png"
+  },
+  {
+    "name": "Drive Mad",
+    "type": "html5",
+    "path": "Games/drive-mad/index.html",
+    "icon": "Games/drive-mad/Icon.jpg"
+  },
+  {
+    "name": "Ducklife1",
+    "type": "html5",
+    "path": "Games/ducklife1/index.html",
+    "icon": "Games/ducklife1/Icon.png"
+  },
+  {
+    "name": "Ducklife2",
+    "type": "html5",
+    "path": "Games/ducklife2/index.html",
+    "icon": "Games/ducklife2/Icon.png"
+  },
+  {
+    "name": "Ducklife3",
+    "type": "html5",
+    "path": "Games/ducklife3/index.html",
+    "icon": "Games/ducklife3/title.png"
+  },
+  {
+    "name": "Finalfantasy3",
+    "type": "rom",
+    "path": "Games/roms/Final Fantasy 3/FinalFantasy3.nes",
+    "icon": "icons/default.png",
+    "core": "nes"
+  },
+  {
+    "name": "Fireboy And Watergirl 2",
+    "type": "html5",
+    "path": "Games/fireboy-and-watergirl-2/index.html",
+    "icon": "Games/fireboy-and-watergirl-2/Icon.png"
+  },
+  {
+    "name": "Fnaf 1",
+    "type": "html5",
+    "path": "Games/Fnaf 1/index.html",
+    "icon": "Games/Fnaf 1/Icon.png"
+  },
+  {
+    "name": "Fnaf 2",
+    "type": "html5",
+    "path": "Games/Fnaf 2/index.html",
+    "icon": "Games/Fnaf 2/Icon.png"
+  },
+  {
+    "name": "Fnaf 3",
+    "type": "html5",
+    "path": "Games/Fnaf 3/index.html",
+    "icon": "Games/Fnaf 3/Icon.png"
+  },
+  {
+    "name": "Fnaf 4",
+    "type": "html5",
+    "path": "Games/Fnaf 4/index.html",
+    "icon": "Games/Fnaf 4/Icon.png"
+  },
+  {
+    "name": "Fnaf World",
+    "type": "html5",
+    "path": "Games/Fnaf World/index.html",
+    "icon": "Games/Fnaf World/Icon.png"
+  },
+  {
+    "name": "Fnf",
+    "type": "html5",
+    "path": "Games/fnf/index.html",
+    "icon": "Games/fnf/favicon.png"
+  },
+  {
+    "name": "Fruitninja",
+    "type": "html5",
+    "path": "Games/fruitninja/index.html",
+    "icon": "Games/fruitninja/Icon.png"
+  },
+  {
+    "name": "Funny Shooter2",
+    "type": "html5",
+    "path": "Games/funny-shooter2/index.html",
+    "icon": "Games/funny-shooter2/Icon.png"
+  },
+  {
+    "name": "Kirbysadventure",
+    "type": "rom",
+    "path": "Games/roms/Kirbys Adventure/KirbysAdventure.nes",
+    "icon": "icons/default.png",
+    "core": "nes"
+  },
+  {
+    "name": "Moto X3M",
+    "type": "html5",
+    "path": "Games/Moto-X3M/index.html",
+    "icon": "icons/default.png"
+  },
+  {
+    "name": "Pizza Simulator",
+    "type": "html5",
+    "path": "Games/Pizza Simulator/index.html",
+    "icon": "Games/Pizza Simulator/Icon.png"
+  },
+  {
+    "name": "Rocket League",
+    "type": "html5",
+    "path": "Games/Rocket-League/index.html",
+    "icon": "Games/Rocket-League/splash.png"
+  },
+  {
+    "name": "Shell Shockers",
+    "type": "html5",
+    "path": "Games/Shell Shockers/index.html",
+    "icon": "Games/Shell Shockers/favicon192.png"
+  },
+  {
+    "name": "Sister Location",
+    "type": "html5",
+    "path": "Games/Sister Location/index.html",
+    "icon": "Games/Sister Location/ Icon.png"
+  },
+  {
+    "name": "Smb",
+    "type": "rom",
+    "path": "Games/roms/Super Mario Brothers/SMB.nes",
+    "icon": "icons/default.png",
+    "core": "nes"
+  },
+  {
+    "name": "Smb2",
+    "type": "rom",
+    "path": "Games/roms/Super Mario Brothers 2/SMB2.nes",
+    "icon": "icons/default.png",
+    "core": "nes"
+  },
+  {
+    "name": "Smb3",
+    "type": "rom",
+    "path": "Games/roms/Super Mario Brothers 3/SMB3.nes",
+    "icon": "icons/default.png",
+    "core": "nes"
+  },
+  {
+    "name": "Starwars",
+    "type": "rom",
+    "path": "Games/roms/starwars/STARWARS.nes",
+    "icon": "icons/default.png",
+    "core": "nes"
+  },
+  {
+    "name": "Subway Surfer Beijing",
+    "type": "html5",
+    "path": "Games/Subway-Surfer-Beijing/index.html",
+    "icon": "Games/Subway-Surfer-Beijing/MoreGames.png"
+  },
+  {
+    "name": "Ultimate Custom Night",
+    "type": "html5",
+    "path": "Games/Ultimate Custom Night/index.html",
+    "icon": "Games/Ultimate Custom Night/Icon.png"
+  },
+  {
+    "name": "Zelda",
+    "type": "rom",
+    "path": "Games/roms/zelda/ZELDA.nes",
+    "icon": "icons/default.png",
+    "core": "nes"
+  },
+  {
+    "name": "Zelda2",
+    "type": "rom",
+    "path": "Games/roms/zelda 2/ZELDA2.nes",
+    "icon": "icons/default.png",
+    "core": "nes"
+  }
+]
