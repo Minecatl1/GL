@@ -6,14 +6,14 @@ from pathlib import Path
 # Configuration
 BASE_DIR = Path(__file__).parent
 GAMES_DIR = BASE_DIR / "Games"
-HTML5_DIR = GAMES_DIR / "html5"
 ROMS_DIR = GAMES_DIR / "roms"
 OUTPUT_JSON = BASE_DIR / "game_list.json"
 
 # Supported ROM extensions mapped to emulator cores
 ROM_CORES = {
     ".nes": "nes", ".smc": "snes", ".sfc": "snes", ".gba": "gba",
-    ".gb": "gb", ".gbc": "gb", ".md": "genesis", ".gen": "genesis"
+    ".gb": "gb", ".gbc": "gb", ".md": "genesis", ".gen": "genesis",
+    ".n64": "n64", ".z64": "n64", ".v64": "n64", ".bin": "psx"
 }
 
 # Preferred icon filenames (in order of priority)
@@ -41,22 +41,24 @@ def find_icon(game_path):
 def scan_html5_games():
     """Scan HTML5 games directory using folder names for game names"""
     games = []
-    for game_dir in HTML5_DIR.iterdir():
-        if not game_dir.is_dir():
+    for game_dir in GAMES_DIR.iterdir():
+        # Skip ROMs directory and non-directories
+        if not game_dir.is_dir() or game_dir.name == "roms":
             continue
             
         # Check for entry point files
         entry_points = ["index.html", "game.html", "main.html", "start.html"]
         for entry in entry_points:
-            if (game_dir / entry).exists():
+            entry_path = game_dir / entry
+            if entry_path.exists():
                 game_name = game_dir.name
-                game_path = f"Games/html5/{game_name}/{entry}"
+                game_path = f"Games/{game_name}/{entry}"
                 
                 games.append({
-                    "name": format_name(game_name),  # Use folder name for display
+                    "name": format_name(game_name),
                     "type": "html5",
                     "path": game_path,
-                    "icon": find_icon(game_path)
+                    "icon": find_icon(entry_path)  # Look in game's folder
                 })
                 break
     return games
@@ -85,7 +87,7 @@ def scan_roms():
                 "name": format_name(rom_file.stem),
                 "type": "rom",
                 "path": game_path,
-                "icon": find_icon(game_path),
+                "icon": find_icon(rom_file),  # Look in ROM's folder
                 "core": ROM_CORES[ext]
             })
     return roms
@@ -143,7 +145,20 @@ def generate_game_list():
 
 if __name__ == "__main__":
     # Create directories if missing
-    HTML5_DIR.mkdir(parents=True, exist_ok=True)
+    GAMES_DIR.mkdir(parents=True, exist_ok=True)
     ROMS_DIR.mkdir(parents=True, exist_ok=True)
+    ICONS_DIR = BASE_DIR / "icons"
+    ICONS_DIR.mkdir(parents=True, exist_ok=True)
+    
+    # Create default icon if it doesn't exist
+    default_icon = ICONS_DIR / "default.png"
+    if not default_icon.exists():
+        # Create a simple default icon
+        from PIL import Image, ImageDraw
+        img = Image.new('RGB', (128, 128), color=(73, 109, 137))
+        d = ImageDraw.Draw(img)
+        d.text((64, 64), "?", fill=(255, 255, 255), anchor="mm")
+        img.save(default_icon)
+        print(f"Created default icon at: {default_icon}")
     
     generate_game_list()
