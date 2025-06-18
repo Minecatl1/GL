@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Universal Game Loader</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         :root {
@@ -30,58 +31,62 @@
             background: linear-gradient(135deg, var(--darker), var(--dark));
             color: var(--light);
             min-height: 100vh;
-            padding: 20px;
+            padding: 15px;
             display: flex;
             flex-direction: column;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* Mobile-first header */
         header {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 20px;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 15px;
+            padding: 10px 0;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 15px;
         }
 
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
+            justify-content: center;
         }
 
         .logo i {
-            font-size: 28px;
+            font-size: 24px;
             color: var(--accent);
         }
 
         .logo h1 {
-            font-size: 24px;
+            font-size: 22px;
             background: linear-gradient(to right, var(--primary), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            text-align: center;
         }
 
         .controls {
             display: flex;
-            gap: 15px;
+            gap: 10px;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
         .mode-toggle {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             background: rgba(255, 255, 255, 0.1);
-            padding: 8px 15px;
+            padding: 6px 12px;
             border-radius: 30px;
             cursor: pointer;
             transition: var(--transition);
             border: 1px solid var(--secondary);
+            font-size: 14px;
         }
 
         .mode-toggle:hover {
@@ -93,55 +98,57 @@
         }
 
         .toggle-indicator {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             background: var(--accent);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 12px;
+            font-size: 10px;
         }
 
         .container {
             display: flex;
+            flex-direction: column;
             flex: 1;
-            gap: 20px;
-            height: calc(100vh - 150px);
+            gap: 15px;
+            height: calc(100vh - 130px);
         }
 
         .sidebar {
-            width: 280px;
             background: rgba(30, 39, 46, 0.8);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(162, 155, 254, 0.2);
             display: flex;
             flex-direction: column;
+            flex: 0 0 auto;
+            max-height: 40vh;
         }
 
         .sidebar-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .sidebar-header h2 {
-            font-size: 20px;
+            font-size: 18px;
             color: var(--accent);
         }
 
         .search-box {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 30px;
-            padding: 10px 15px;
+            padding: 8px 12px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 8px;
+            margin-bottom: 15px;
         }
 
         .search-box input {
@@ -149,12 +156,13 @@
             border: none;
             color: var(--light);
             width: 100%;
-            font-size: 16px;
+            font-size: 14px;
             outline: none;
         }
 
         .search-box i {
             color: var(--secondary);
+            font-size: 14px;
         }
 
         .game-list {
@@ -164,25 +172,25 @@
         }
 
         .game-list::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
 
         .game-list::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 4px;
+            border-radius: 3px;
         }
 
         .game-list::-webkit-scrollbar-thumb {
             background: var(--primary);
-            border-radius: 4px;
+            border-radius: 3px;
         }
 
         .game-item {
             display: flex;
             align-items: center;
-            padding: 12px;
-            border-radius: 10px;
-            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 8px;
             background: rgba(255, 255, 255, 0.05);
             cursor: pointer;
             transition: var(--transition);
@@ -191,7 +199,6 @@
 
         .game-item:hover {
             background: rgba(108, 92, 231, 0.3);
-            transform: translateY(-2px);
             border-color: var(--secondary);
         }
 
@@ -201,41 +208,46 @@
         }
 
         .game-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            object-fit: cover;
-            margin-right: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            margin-right: 12px;
             border: 2px solid var(--primary);
             background: var(--darker);
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 20px;
+            font-size: 18px;
             color: var(--accent);
+            flex-shrink: 0;
         }
 
         .game-icon img {
             width: 100%;
             height: 100%;
-            border-radius: 8px;
+            border-radius: 6px;
             object-fit: cover;
         }
 
         .game-info {
             flex: 1;
+            min-width: 0;
         }
 
         .game-name {
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             color: var(--light);
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .game-type {
-            font-size: 12px;
+            font-size: 11px;
             background: var(--darker);
-            padding: 3px 8px;
+            padding: 2px 6px;
             border-radius: 20px;
             display: inline-block;
         }
@@ -253,14 +265,14 @@
             display: flex;
             flex-direction: column;
             background: rgba(30, 39, 46, 0.8);
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(162, 155, 254, 0.2);
         }
 
         .game-header {
-            padding: 15px 20px;
+            padding: 12px 15px;
             background: rgba(44, 52, 60, 0.8);
             display: flex;
             justify-content: space-between;
@@ -271,30 +283,36 @@
         .current-game {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
+            min-width: 0;
         }
 
         .current-game img {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
+            width: 35px;
+            height: 35px;
+            border-radius: 6px;
+            flex-shrink: 0;
         }
 
         .game-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .game-actions {
             display: flex;
-            gap: 10px;
+            gap: 8px;
+            flex-shrink: 0;
         }
 
         .action-btn {
             background: rgba(255, 255, 255, 0.1);
             border: none;
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -302,7 +320,7 @@
             color: var(--light);
             cursor: pointer;
             transition: var(--transition);
-            font-size: 16px;
+            font-size: 14px;
         }
 
         .action-btn:hover {
@@ -318,23 +336,25 @@
             position: relative;
             overflow: hidden;
             background: #000;
+            width: 100%;
+            height: 100%;
         }
 
         .placeholder {
             text-align: center;
             color: rgba(255, 255, 255, 0.3);
-            padding: 20px;
-            max-width: 600px;
+            padding: 15px;
+            max-width: 100%;
         }
 
         .placeholder i {
-            font-size: 60px;
-            margin-bottom: 20px;
+            font-size: 50px;
+            margin-bottom: 15px;
             color: var(--primary);
         }
 
         .placeholder h3 {
-            font-size: 24px;
+            font-size: 20px;
             margin-bottom: 10px;
             color: var(--accent);
         }
@@ -342,12 +362,16 @@
         .placeholder p {
             margin: 0 auto;
             line-height: 1.6;
+            font-size: 14px;
         }
 
         #gameCanvas {
             width: 100%;
             height: 100%;
             display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
         #gameFrame {
@@ -355,28 +379,39 @@
             height: 100%;
             border: none;
             display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #gameEmbed {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
         .game-footer {
-            padding: 15px 20px;
+            padding: 12px 15px;
             background: rgba(44, 52, 60, 0.8);
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--secondary);
-            font-size: 14px;
+            font-size: 12px;
         }
 
         .status {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .status-dot {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background: var(--success);
         }
@@ -387,11 +422,11 @@
 
         .loader {
             display: inline-block;
-            width: 40px;
-            height: 40px;
-            border: 4px solid rgba(255, 255, 255, 0.3);
+            width: 35px;
+            height: 35px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
-            border-top: 4px solid var(--accent);
+            border-top: 3px solid var(--accent);
             animation: spin 1s linear infinite;
         }
 
@@ -403,39 +438,95 @@
         .error-message {
             color: var(--danger);
             text-align: center;
-            padding: 20px;
+            padding: 15px;
         }
 
-        @media (max-width: 900px) {
-            .container {
-                flex-direction: column;
-                height: auto;
-            }
-            
-            .sidebar {
-                width: 100%;
-                max-height: 300px;
-            }
-            
-            .game-content {
-                min-height: 500px;
-            }
-        }
-
-        @media (max-width: 600px) {
+        /* Tablet and Desktop Styles */
+        @media (min-width: 768px) {
             header {
-                flex-direction: column;
-                gap: 15px;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 0;
             }
             
-            .logo h1 {
-                font-size: 20px;
+            .logo {
+                justify-content: flex-start;
             }
             
             .controls {
-                width: 100%;
-                justify-content: center;
+                justify-content: flex-end;
             }
+            
+            .container {
+                flex-direction: row;
+                height: calc(100vh - 150px);
+            }
+            
+            .sidebar {
+                width: 280px;
+                max-height: none;
+                flex: 0 0 auto;
+            }
+            
+            .game-content {
+                min-height: auto;
+            }
+        }
+
+        /* Landscape orientation for mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .container {
+                flex-direction: row;
+                height: calc(100vh - 100px);
+            }
+            
+            .sidebar {
+                width: 200px;
+                max-height: none;
+            }
+        }
+
+        /* Fullscreen styles */
+        :fullscreen .game-display {
+            background: #000;
+        }
+        
+        :fullscreen #gameCanvas,
+        :fullscreen #gameFrame,
+        :fullscreen #gameEmbed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 9999;
+        }
+        
+        /* EmulatorJS specific styles */
+        .emulator-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .emulator-actions {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+            display: flex;
+            gap: 5px;
+        }
+        
+        .emulator-btn {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -508,6 +599,7 @@
                 
                 <canvas id="gameCanvas"></canvas>
                 <iframe id="gameFrame"></iframe>
+                <div id="emulatorContainer"></div>
             </div>
             
             <div class="game-footer">
@@ -519,6 +611,9 @@
             </div>
         </div>
     </div>
+
+    <!-- EmulatorJS loader script -->
+    <script src="emulators/emulatorJS/emulator.js"></script>
     
     <script>
         // State management
@@ -537,6 +632,7 @@
             gameDisplay: document.getElementById('gameDisplay'),
             gameCanvas: document.getElementById('gameCanvas'),
             gameFrame: document.getElementById('gameFrame'),
+            emulatorContainer: document.getElementById('emulatorContainer'),
             html5Toggle: document.getElementById('html5Toggle'),
             fullscreenBtn: document.getElementById('fullscreenBtn'),
             reloadBtn: document.getElementById('reloadBtn'),
@@ -553,6 +649,13 @@
             setupEventListeners();
             updateModeIndicator();
             await loadGameList();
+            setupOrientationChangeHandler();
+            
+            // Check if EmulatorJS is already loaded
+            if (typeof EmulatorJS !== 'undefined') {
+                state.emulatorLoaded = true;
+                console.log('EmulatorJS is loaded');
+            }
         }
 
         // Load game list from JSON
@@ -642,7 +745,13 @@
             });
             
             // Set active class
-            document.querySelector(`.game-item[data-id="${game.name}"]`).classList.add('active');
+            const gameElement = document.querySelector(`.game-item[data-id="${game.name}"]`);
+            if (gameElement) {
+                gameElement.classList.add('active');
+                
+                // Scroll to selected game if needed
+                gameElement.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+            }
             
             // Update header
             elements.gameTitle.textContent = game.name;
@@ -666,8 +775,9 @@
 
         // Load HTML5 game
         function loadHTML5Game(game) {
-            // Hide canvas, show frame
+            // Hide canvas and emulator container
             elements.gameCanvas.style.display = 'none';
+            elements.emulatorContainer.innerHTML = '';
             
             // Remove any existing embed element
             const embed = document.getElementById('gameEmbed');
@@ -678,6 +788,7 @@
             if (state.html5Mode === 'iframe') {
                 elements.gameFrame.src = game.path;
                 elements.gameFrame.style.display = 'block';
+                resizeGameContainer();
             } else {
                 // For embed, we need to create a new element
                 elements.gameFrame.style.display = 'none';
@@ -690,81 +801,130 @@
                 embed.id = 'gameEmbed';
                 
                 elements.gameDisplay.appendChild(embed);
+                resizeGameContainer();
             }
         }
 
         // Load ROM game with EmulatorJS
         function loadRomGame(game) {
-            // Hide frame, show canvas
+            // Hide HTML5 elements
             elements.gameFrame.style.display = 'none';
-            elements.gameCanvas.style.display = 'block';
+            const embed = document.getElementById('gameEmbed');
+            if (embed) embed.style.display = 'none';
             
+            // Show emulator container
+            elements.emulatorContainer.innerHTML = '';
+            elements.emulatorContainer.style.display = 'block';
+            
+            // Create canvas for emulator
+            const canvas = document.createElement('canvas');
+            canvas.id = 'emulatorCanvas';
+            canvas.style.width = '100%';
+            canvas.style.height = '100%';
+            canvas.style.display = 'block';
+            
+            // Create emulator container
+            const container = document.createElement('div');
+            container.className = 'emulator-container';
+            container.appendChild(canvas);
+            
+            // Add emulator actions
+            const actions = document.createElement('div');
+            actions.className = 'emulator-actions';
+            actions.innerHTML = `
+                <button class="emulator-btn" id="saveStateBtn"><i class="fas fa-save"></i> Save</button>
+                <button class="emulator-btn" id="loadStateBtn"><i class="fas fa-folder-open"></i> Load</button>
+            `;
+            container.appendChild(actions);
+            
+            elements.emulatorContainer.appendChild(container);
+            
+            // Initialize the emulator
+            initEmulator(game, canvas);
+        }
+
+        // Initialize EmulatorJS
+        function initEmulator(game, canvas) {
             // Show loading state
-            elements.gameCanvas.style.background = '#000';
-            const ctx = elements.gameCanvas.getContext('2d');
-            elements.gameCanvas.width = elements.gameCanvas.clientWidth;
-            elements.gameCanvas.height = elements.gameCanvas.clientHeight;
+            const ctx = canvas.getContext('2d');
+            resizeGameContainer();
             
             ctx.fillStyle = '#3498db';
             ctx.font = '20px Arial';
             ctx.textAlign = 'center';
-            ctx.fillText('Loading EmulatorJS...', elements.gameCanvas.width/2, elements.gameCanvas.height/2);
+            ctx.fillText('Loading EmulatorJS...', canvas.width/2, canvas.height/2);
             
-            // Load EmulatorJS if not already loaded
-            if (!state.emulatorLoaded) {
-                const script = document.createElement('script');
-                script.src = 'emulators/emulatorJS/emulator.js';
-                script.onload = () => {
-                    state.emulatorLoaded = true;
-                    initEmulator(game);
-                };
-                script.onerror = () => {
-                    ctx.fillStyle = '#ff7675';
-                    ctx.fillText('Failed to load EmulatorJS', elements.gameCanvas.width/2, elements.gameCanvas.height/2 + 30);
-                };
-                document.head.appendChild(script);
-            } else {
-                initEmulator(game);
+            // Check if EmulatorJS is loaded
+            if (typeof EmulatorJS === 'undefined') {
+                ctx.fillStyle = '#ff7675';
+                ctx.fillText('EmulatorJS not loaded!', canvas.width/2, canvas.height/2 + 30);
+                return;
+            }
+            
+            // Configure EmulatorJS
+            const emulator = new EmulatorJS({
+                canvas: canvas,
+                core: game.core,
+                dataPath: 'emulators/emulatorJS/data/',
+                libPath: 'emulators/emulatorJS/lib/',
+                biosPath: 'emulators/emulatorJS/bios/',
+                workerPath: 'emulators/emulatorJS/worker/',
+                rom: game.path,
+                onStart: function() {
+                    console.log('Emulator started for:', game.name);
+                },
+                onError: function(error) {
+                    console.error('Emulator error:', error);
+                    alert(`Error loading ROM: ${error.message}`);
+                },
+                onProgress: function(progress) {
+                    // Show loading progress
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.fillStyle = '#3498db';
+                    ctx.font = '20px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(`Loading: ${Math.round(progress * 100)}%`, canvas.width/2, canvas.height/2);
+                }
+            });
+            
+            // Start the emulator
+            emulator.start();
+            state.emulator = emulator;
+            
+            // Add event listeners for emulator buttons
+            document.getElementById('saveStateBtn').addEventListener('click', () => {
+                emulator.saveState();
+                alert('Game state saved!');
+            });
+            
+            document.getElementById('loadStateBtn').addEventListener('click', () => {
+                emulator.loadState();
+                alert('Game state loaded!');
+            });
+        }
+
+        // Ensure game container fills available space
+        function resizeGameContainer() {
+            const display = elements.gameDisplay;
+            const canvas = document.getElementById('emulatorCanvas') || elements.gameCanvas;
+            const frame = elements.gameFrame;
+            
+            // Set dimensions to fill container
+            if (canvas) {
+                canvas.width = display.clientWidth;
+                canvas.height = display.clientHeight;
+            }
+            
+            if (frame) {
+                frame.style.width = `${display.clientWidth}px`;
+                frame.style.height = `${display.clientHeight}px`;
             }
         }
 
-        // Initialize EmulatorJS
-        function initEmulator(game) {
-            const canvas = elements.gameCanvas;
-            
-            // Clear canvas
-            const ctx = canvas.getContext('2d');
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // Simulate EmulatorJS initialization (in a real app, you'd use the actual API)
-            ctx.fillStyle = '#1a1a2e';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            // Draw game title
-            ctx.fillStyle = '#fff';
-            ctx.font = '24px Arial';
-            ctx.textAlign = 'center';
-            ctx.fillText(`${game.name} - ${game.core.toUpperCase()}`, canvas.width/2, 40);
-            
-            // Draw game content
-            ctx.fillStyle = '#4e54c8';
-            ctx.beginPath();
-            ctx.arc(canvas.width/2, canvas.height/2, 100, 0, Math.PI * 2);
-            ctx.fill();
-            
-            ctx.fillStyle = '#fff';
-            ctx.font = '16px Arial';
-            ctx.fillText('EmulatorJS Running', canvas.width/2, canvas.height/2);
-            
-            // Draw some moving elements
-            const time = Date.now() / 1000;
-            const x = Math.sin(time) * 80 + canvas.width/2;
-            const y = Math.cos(time * 0.8) * 80 + canvas.height/2;
-            
-            ctx.fillStyle = '#f39c12';
-            ctx.beginPath();
-            ctx.arc(x, y, 15, 0, Math.PI * 2);
-            ctx.fill();
+        // Handle orientation changes
+        function setupOrientationChangeHandler() {
+            window.addEventListener('resize', resizeGameContainer);
+            window.addEventListener('orientationchange', resizeGameContainer);
         }
 
         // Cleanup previous game
@@ -775,10 +935,20 @@
                 embed.remove();
             }
             
+            // Reset emulator container
+            elements.emulatorContainer.innerHTML = '';
+            elements.emulatorContainer.style.display = 'none';
+            
             // Reset canvas
             if (elements.gameCanvas) {
                 const ctx = elements.gameCanvas.getContext('2d');
                 ctx.clearRect(0, 0, elements.gameCanvas.width, elements.gameCanvas.height);
+            }
+            
+            // Stop any running emulator
+            if (state.emulator) {
+                state.emulator.stop();
+                state.emulator = null;
             }
         }
 
@@ -853,6 +1023,7 @@
         // Handle fullscreen change events
         document.addEventListener('fullscreenchange', () => {
             state.isFullscreen = !!document.fullscreenElement;
+            resizeGameContainer();
         });
 
         // Initialize when DOM is loaded
