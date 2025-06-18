@@ -1,0 +1,58 @@
+name: Generate Game List
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'Games/**'
+      - 'ggln.py'
+  workflow_dispatch:
+
+jobs:
+  generate-game-list:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install pillow
+
+      - name: Create necessary directories
+        run: |
+          mkdir -p Games
+          mkdir -p icons
+
+      - name: Run game list generator
+        run: python ggln.py
+
+      - name: Verify game_list.json
+        run: |
+          if [ ! -f "game_list.json" ]; then
+            echo "game_list.json not found!"
+            exit 1
+          fi
+          echo "Game list generated successfully:"
+          head -n 20 game_list.json
+
+      - name: Upload game_list.json artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: game-list
+          path: game_list.json
+          retention-days: 5
+
+      - name: Commit updated game_list.json
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add game_list.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update game_list.json"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
