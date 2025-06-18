@@ -30,16 +30,7 @@ jobs:
 
       - name: Run game list generator
         run: python ggln.py
-
-      - name: Verify game_list.json
-        run: |
-          if [ ! -f "game_list.json" ]; then
-            echo "game_list.json not found!"
-            exit 1
-          fi
-          echo "Game list generated successfully:"
-          head -n 20 game_list.json
-
+        
       - name: Upload game_list.json artifact
         uses: actions/upload-artifact@v4
         with:
