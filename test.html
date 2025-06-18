@@ -1,23 +1,862 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Universal Game Loader</title>
-  <style>
-    .game-item { cursor: pointer; padding: 10px; }
-    .game-frame { width: 100%; height: 80vh; border: none; }
-    #emulator-canvas { width: 100%; max-width: 640px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Game Loader</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --dark: #2d3436;
+            --darker: #1e272e;
+            --light: #f5f6fa;
+            --accent: #00cec9;
+            --success: #00b894;
+            --warning: #fdcb6e;
+            --danger: #ff7675;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            color: var(--light);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 28px;
+            color: var(--accent);
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .mode-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid var(--secondary);
+        }
+
+        .mode-toggle:hover {
+            background: rgba(108, 92, 231, 0.3);
+        }
+
+        .mode-toggle.active {
+            background: var(--primary);
+        }
+
+        .toggle-indicator {
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+            gap: 20px;
+            height: calc(100vh - 150px);
+        }
+
+        .sidebar {
+            width: 280px;
+            background: rgba(30, 39, 46, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(162, 155, 254, 0.2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-header h2 {
+            font-size: 20px;
+            color: var(--accent);
+        }
+
+        .search-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: var(--light);
+            width: 100%;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-box i {
+            color: var(--secondary);
+        }
+
+        .game-list {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .game-list::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .game-list::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+
+        .game-list::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        .game-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .game-item:hover {
+            background: rgba(108, 92, 231, 0.3);
+            transform: translateY(-2px);
+            border-color: var(--secondary);
+        }
+
+        .game-item.active {
+            background: rgba(108, 92, 231, 0.5);
+            border-color: var(--accent);
+        }
+
+        .game-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid var(--primary);
+            background: var(--darker);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: var(--accent);
+        }
+
+        .game-icon img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .game-info {
+            flex: 1;
+        }
+
+        .game-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--light);
+        }
+
+        .game-type {
+            font-size: 12px;
+            background: var(--darker);
+            padding: 3px 8px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .html5-type {
+            background: var(--primary);
+        }
+
+        .rom-type {
+            background: var(--success);
+        }
+
+        .game-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: rgba(30, 39, 46, 0.8);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(162, 155, 254, 0.2);
+        }
+
+        .game-header {
+            padding: 15px 20px;
+            background: rgba(44, 52, 60, 0.8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .current-game {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .current-game img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+        }
+
+        .game-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .game-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--light);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 16px;
+        }
+
+        .action-btn:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
+
+        .game-display {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .placeholder {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            max-width: 600px;
+        }
+
+        .placeholder i {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .placeholder h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .placeholder p {
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        #gameCanvas {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        #gameFrame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: none;
+        }
+
+        .game-footer {
+            padding: 15px 20px;
+            background: rgba(44, 52, 60, 0.8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--secondary);
+            font-size: 14px;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--success);
+        }
+
+        .status-dot.offline {
+            background: var(--danger);
+        }
+
+        .loader {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid var(--accent);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            color: var(--danger);
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .sidebar {
+                width: 100%;
+                max-height: 300px;
+            }
+            
+            .game-content {
+                min-height: 500px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .logo h1 {
+                font-size: 20px;
+            }
+            
+            .controls {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <button id="toggle-html5">Toggle HTML5 Mode</button>
-    <span id="mode-indicator"></span>
-  </header>
+    <header>
+        <div class="logo">
+            <i class="fas fa-gamepad"></i>
+            <h1>Universal Game Loader</h1>
+        </div>
+        <div class="controls">
+            <div class="mode-toggle" id="html5Toggle">
+                <div class="toggle-indicator">
+                    <i class="fas fa-toggle-on"></i>
+                </div>
+                <span>HTML5: iFrame</span>
+            </div>
+            <div class="mode-toggle" id="fullscreenBtn">
+                <div class="toggle-indicator">
+                    <i class="fas fa-expand"></i>
+                </div>
+                <span>Fullscreen</span>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Game Library</h2>
+                <div class="game-count" id="gameCount">Loading...</div>
+            </div>
+            
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search games...">
+            </div>
+            
+            <div class="game-list" id="gameList">
+                <div class="placeholder">
+                    <div class="loader"></div>
+                    <p>Loading game library...</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-content">
+            <div class="game-header">
+                <div class="current-game">
+                    <div class="game-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="game-title">Select a game to play</div>
+                </div>
+                <div class="game-actions">
+                    <button class="action-btn" id="reloadBtn">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                    <button class="action-btn" id="muteBtn">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="game-display" id="gameDisplay">
+                <div class="placeholder">
+                    <i class="fas fa-compass"></i>
+                    <h3>Game Loader Ready</h3>
+                    <p>Select a game from the library to start playing. HTML5 games will load in an iframe/embed, while ROMs will launch with EmulatorJS.</p>
+                </div>
+                
+                <canvas id="gameCanvas"></canvas>
+                <iframe id="gameFrame"></iframe>
+            </div>
+            
+            <div class="game-footer">
+                <div class="status">
+                    <div class="status-dot"></div>
+                    <span>System Ready</span>
+                </div>
+                <div>EmulatorJS v3.7 | Loader v2.0</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // State management
+        const state = {
+            html5Mode: localStorage.getItem('html5Mode') || 'iframe',
+            currentGame: null,
+            emulator: null,
+            isFullscreen: false,
+            games: [],
+            emulatorLoaded: false
+        };
 
-  <aside id="game-menu"><!-- Game list renders here --></aside>
-  
-  <main id="game-container"><!-- Active game renders here --></main>
+        // DOM Elements
+        const elements = {
+            gameList: document.getElementById('gameList'),
+            gameDisplay: document.getElementById('gameDisplay'),
+            gameCanvas: document.getElementById('gameCanvas'),
+            gameFrame: document.getElementById('gameFrame'),
+            html5Toggle: document.getElementById('html5Toggle'),
+            fullscreenBtn: document.getElementById('fullscreenBtn'),
+            reloadBtn: document.getElementById('reloadBtn'),
+            muteBtn: document.getElementById('muteBtn'),
+            searchInput: document.getElementById('searchInput'),
+            placeholder: document.querySelector('.placeholder'),
+            gameTitle: document.querySelector('.game-title'),
+            gameIcon: document.querySelector('.current-game .game-icon'),
+            gameCount: document.getElementById('gameCount')
+        };
 
-  <script src="Loader.js"></script>
+        // Initialize the game loader
+        async function init() {
+            setupEventListeners();
+            updateModeIndicator();
+            await loadGameList();
+        }
+
+        // Load game list from JSON
+        async function loadGameList() {
+            try {
+                // Show loading state
+                elements.gameList.innerHTML = `
+                    <div class="placeholder">
+                        <div class="loader"></div>
+                        <p>Loading game library...</p>
+                    </div>
+                `;
+                
+                // Fetch game_list.json
+                const response = await fetch('game_list.json');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                state.games = await response.json();
+                
+                // Update game count
+                elements.gameCount.textContent = `${state.games.length} Games`;
+                
+                // Render game list
+                renderGameList();
+            } catch (error) {
+                console.error('Error loading game list:', error);
+                elements.gameList.innerHTML = `
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Failed to load games</h3>
+                        <p>${error.message}</p>
+                        <button id="retryButton" style="margin-top: 15px; padding: 8px 15px; background: var(--primary); border: none; border-radius: 5px; color: white; cursor: pointer;">
+                            Retry
+                        </button>
+                    </div>
+                `;
+                
+                document.getElementById('retryButton').addEventListener('click', loadGameList);
+            }
+        }
+
+        // Render game list
+        function renderGameList(games = state.games) {
+            if (games.length === 0) {
+                elements.gameList.innerHTML = `
+                    <div class="placeholder">
+                        <i class="fas fa-gamepad"></i>
+                        <h3>No Games Found</h3>
+                        <p>Add games to your library to get started</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            elements.gameList.innerHTML = '';
+            
+            games.forEach(game => {
+                const gameEl = document.createElement('div');
+                gameEl.className = 'game-item';
+                gameEl.dataset.id = game.name;
+                
+                gameEl.innerHTML = `
+                    <div class="game-icon">
+                        ${game.icon ? `<img src="${game.icon}" alt="${game.name}">` : `<i class="fas fa-gamepad"></i>`}
+                    </div>
+                    <div class="game-info">
+                        <div class="game-name">${game.name}</div>
+                        <div class="game-type ${game.type === 'html5' ? 'html5-type' : 'rom-type'}">
+                            ${game.type.toUpperCase()} ${game.core ? `| ${game.core.toUpperCase()}` : ''}
+                        </div>
+                    </div>
+                `;
+                
+                gameEl.addEventListener('click', () => loadGame(game));
+                elements.gameList.appendChild(gameEl);
+            });
+        }
+
+        // Load selected game
+        function loadGame(game) {
+            // Clear active classes
+            document.querySelectorAll('.game-item').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Set active class
+            document.querySelector(`.game-item[data-id="${game.name}"]`).classList.add('active');
+            
+            // Update header
+            elements.gameTitle.textContent = game.name;
+            elements.gameIcon.innerHTML = game.icon ? 
+                `<img src="${game.icon}" alt="${game.name}">` : 
+                `<i class="fas fa-gamepad"></i>`;
+            
+            // Hide placeholder
+            elements.placeholder.style.display = 'none';
+            
+            // Cleanup previous game
+            cleanupPreviousGame();
+            state.currentGame = game;
+            
+            if (game.type === 'html5') {
+                loadHTML5Game(game);
+            } else {
+                loadRomGame(game);
+            }
+        }
+
+        // Load HTML5 game
+        function loadHTML5Game(game) {
+            // Hide canvas, show frame
+            elements.gameCanvas.style.display = 'none';
+            
+            // Remove any existing embed element
+            const embed = document.getElementById('gameEmbed');
+            if (embed) {
+                embed.remove();
+            }
+            
+            if (state.html5Mode === 'iframe') {
+                elements.gameFrame.src = game.path;
+                elements.gameFrame.style.display = 'block';
+            } else {
+                // For embed, we need to create a new element
+                elements.gameFrame.style.display = 'none';
+                
+                const embed = document.createElement('embed');
+                embed.src = game.path;
+                embed.type = 'text/html';
+                embed.style.width = '100%';
+                embed.style.height = '100%';
+                embed.id = 'gameEmbed';
+                
+                elements.gameDisplay.appendChild(embed);
+            }
+        }
+
+        // Load ROM game with EmulatorJS
+        function loadRomGame(game) {
+            // Hide frame, show canvas
+            elements.gameFrame.style.display = 'none';
+            elements.gameCanvas.style.display = 'block';
+            
+            // Show loading state
+            elements.gameCanvas.style.background = '#000';
+            const ctx = elements.gameCanvas.getContext('2d');
+            elements.gameCanvas.width = elements.gameCanvas.clientWidth;
+            elements.gameCanvas.height = elements.gameCanvas.clientHeight;
+            
+            ctx.fillStyle = '#3498db';
+            ctx.font = '20px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Loading EmulatorJS...', elements.gameCanvas.width/2, elements.gameCanvas.height/2);
+            
+            // Load EmulatorJS if not already loaded
+            if (!state.emulatorLoaded) {
+                const script = document.createElement('script');
+                script.src = 'emulators/emulatorJS/emulator.js';
+                script.onload = () => {
+                    state.emulatorLoaded = true;
+                    initEmulator(game);
+                };
+                script.onerror = () => {
+                    ctx.fillStyle = '#ff7675';
+                    ctx.fillText('Failed to load EmulatorJS', elements.gameCanvas.width/2, elements.gameCanvas.height/2 + 30);
+                };
+                document.head.appendChild(script);
+            } else {
+                initEmulator(game);
+            }
+        }
+
+        // Initialize EmulatorJS
+        function initEmulator(game) {
+            const canvas = elements.gameCanvas;
+            
+            // Clear canvas
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Simulate EmulatorJS initialization (in a real app, you'd use the actual API)
+            ctx.fillStyle = '#1a1a2e';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw game title
+            ctx.fillStyle = '#fff';
+            ctx.font = '24px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(`${game.name} - ${game.core.toUpperCase()}`, canvas.width/2, 40);
+            
+            // Draw game content
+            ctx.fillStyle = '#4e54c8';
+            ctx.beginPath();
+            ctx.arc(canvas.width/2, canvas.height/2, 100, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.fillStyle = '#fff';
+            ctx.font = '16px Arial';
+            ctx.fillText('EmulatorJS Running', canvas.width/2, canvas.height/2);
+            
+            // Draw some moving elements
+            const time = Date.now() / 1000;
+            const x = Math.sin(time) * 80 + canvas.width/2;
+            const y = Math.cos(time * 0.8) * 80 + canvas.height/2;
+            
+            ctx.fillStyle = '#f39c12';
+            ctx.beginPath();
+            ctx.arc(x, y, 15, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // Cleanup previous game
+        function cleanupPreviousGame() {
+            // Remove any existing embed element
+            const embed = document.getElementById('gameEmbed');
+            if (embed) {
+                embed.remove();
+            }
+            
+            // Reset canvas
+            if (elements.gameCanvas) {
+                const ctx = elements.gameCanvas.getContext('2d');
+                ctx.clearRect(0, 0, elements.gameCanvas.width, elements.gameCanvas.height);
+            }
+        }
+
+        // Toggle between iframe/embed
+        function toggleHTML5Mode() {
+            state.html5Mode = state.html5Mode === 'iframe' ? 'embed' : 'iframe';
+            localStorage.setItem('html5Mode', state.html5Mode);
+            updateModeIndicator();
+            
+            // Reload current game if HTML5
+            if (state.currentGame?.type === 'html5') {
+                loadGame(state.currentGame);
+            }
+        }
+
+        // Update UI indicator
+        function updateModeIndicator() {
+            const indicator = elements.html5Toggle.querySelector('span');
+            indicator.textContent = `HTML5: ${state.html5Mode === 'iframe' ? 'iFrame' : 'Embed'}`;
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // HTML5 mode toggle
+            elements.html5Toggle.addEventListener('click', toggleHTML5Mode);
+            
+            // Fullscreen button
+            elements.fullscreenBtn.addEventListener('click', toggleFullscreen);
+            
+            // Reload button
+            elements.reloadBtn.addEventListener('click', () => {
+                if (state.currentGame) {
+                    loadGame(state.currentGame);
+                }
+            });
+            
+            // Mute button
+            elements.muteBtn.addEventListener('click', () => {
+                const icon = elements.muteBtn.querySelector('i');
+                if (icon.classList.contains('fa-volume-up')) {
+                    icon.classList.replace('fa-volume-up', 'fa-volume-mute');
+                } else {
+                    icon.classList.replace('fa-volume-mute', 'fa-volume-up');
+                }
+            });
+            
+            // Search input
+            elements.searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                const filtered = state.games.filter(game => 
+                    game.name.toLowerCase().includes(term)
+                );
+                renderGameList(filtered);
+            });
+        }
+
+        // Toggle fullscreen
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                elements.gameDisplay.requestFullscreen().catch(err => {
+                    console.error(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+                elements.fullscreenBtn.querySelector('span').textContent = 'Exit Fullscreen';
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                    elements.fullscreenBtn.querySelector('span').textContent = 'Fullscreen';
+                }
+            }
+        }
+
+        // Handle fullscreen change events
+        document.addEventListener('fullscreenchange', () => {
+            state.isFullscreen = !!document.fullscreenElement;
+        });
+
+        // Initialize when DOM is loaded
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
 </body>
 </html>
