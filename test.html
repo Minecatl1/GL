@@ -613,7 +613,7 @@
     </div>
 
     <!-- EmulatorJS loader script -->
-    <script src="emulators/emulatorJS.js"></script>
+    <script src="emulators/EmulatorJS/data/loader.js"></script>
     
     <script>
         // State management
@@ -865,10 +865,10 @@
             const emulator = new EmulatorJS({
                 canvas: canvas,
                 core: game.core,
-                dataPath: 'emulators/emulatorJS/data/',
-                libPath: 'emulators/emulatorJS/lib/',
-                biosPath: 'emulators/emulatorJS/bios/',
-                workerPath: 'emulators/emulatorJS/worker/',
+                dataPath: 'emulators/EmulatorJS/data/',
+                libPath: 'emulators/EmulatorJS/lib/',
+                biosPath: 'emulators/EmulatorJS/bios/',
+                workerPath: 'emulators/EmulatorJS/worker/',
                 rom: game.path,
                 onStart: function() {
                     console.log('Emulator started for:', game.name);
